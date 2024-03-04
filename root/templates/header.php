@@ -19,7 +19,7 @@
             <h1>Global Getaways</h1>
         </div>
         <div class="login-button">
-            <a href="login.html"><button>Login</button></a>
+            <a href="login.php"><button>Login</button></a>
         </div>
     </div>
 
