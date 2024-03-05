@@ -1,0 +1,41 @@
+.admin-table {
+    width: 100%; /* Adjust width as needed */
+    border-collapse: collapse; /* Remove default table borders */
+}
+
+
+.admin-table thead th {
+    background-color: #ddd;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+.admin-table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Add a thin border between rows */
+}
+
+
+.admin-table td a {
+    display: block; /* Make entire cell clickable */
+    width: 100%; /* Match table cell width */
+    text-decoration: none; /* Remove default link underline */
+    color: #333; /* Default text color */
+    padding: 5px 10px; /* Adjust padding for links*/
+    font-size: larger;
+    color: red;
+}
+
+.admin-table td a:hover {
+    background-color: #f0f0f0; /* Slightly lighter background on hover */
+}
+
+h1 {
+    font-size: xxx-large;
+    text-align: center;
+    color: red;
+    font-family: 'Arial', sans-serif;
+    text-decoration: underline;
+}

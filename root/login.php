@@ -1,4 +1,5 @@
 <?php
+require "templates/header.php";
 if (isset($_POST['register'])) {
     require "common.php";
     try {
@@ -36,15 +37,17 @@ if (isset($_POST['register'])) {
     } catch(Exception $e) {
         echo "Error: " . $e->getMessage();
     }
+
 }
 
-require "templates/header.php";
+
 
 if (isset($_POST['register']) && isset($statement) && $statement) {
     echo htmlspecialchars($fullName) . ', you have been successfully registered.';
 }
 
 if(isset($_POST['login'])){
+
     require "common.php";
     try{
         require_once 'connection/connectionToDB.php';
