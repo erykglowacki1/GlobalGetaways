@@ -30,9 +30,11 @@ try {
 <head>
 
     <link rel="stylesheet" href="../css/deleteDesign.css">
-   
+
 
 </head>
+
+
 <?php require "../templates/header.php"?>
 <h2>Delete Activities</h2>
 <?php if (!empty($success)) echo $success; ?> <!-- Check if $success is not empty -->
@@ -41,6 +43,9 @@ try {
     <tr>
         <th>id</th>
         <th>Activity Type</th>
+        <th>Price</th>
+
+
     </tr>
     </thead>
     <tbody>
@@ -48,6 +53,8 @@ try {
         <tr>
             <td><?php echo escape($row["id"]); ?></td>
             <td><?php echo escape($row["Equipment"]); ?></td>
+            <td><?php echo escape($row["Price"]); ?></td>
+
             <td><a href="deleteActivity.php?id=<?php echo escape($row["id"]);
                 ?>">Delete</a></td>
         </tr>
@@ -55,4 +62,3 @@ try {
     </tbody>
 </table>
 <a href="admin.php">Back to home</a>
-

@@ -5,7 +5,7 @@
  */
 $host = "localhost";
 $username = "root";
-$password = "password";
+$password = "root";
 $dbname = "GlobalGetaways";
 $dsn = "mysql:host=$host;dbname=$dbname";
 $options = array(

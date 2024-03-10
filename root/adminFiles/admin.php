@@ -17,7 +17,7 @@ require "../templates/header.php";
     <tbody>
     <tr>
         <td>
-            <a href="adminAddFlight.php">Add new destinations</a>
+            <a href="adminAddDestination.php">Add new destinations</a>
         </td>
     </tr>
     <tr>

@@ -4,36 +4,37 @@ class Activity
 {
     private $activityId; //primary key
     private $equipment;
-    private $adminId; //foreign key
 
 
-    public function __construct($activityId, $equipment, $adminId)
+    private $price;
+
+    /**
+
+     * @param $equipment
+
+     * @param $price
+     */
+    public function __construct( $equipment, $price)
     {
-        $this->activityId = $activityId;
+
         $this->equipment = $equipment;
-        $this->adminId = $adminId;
+        $this->price = $price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 
     //getters and setters
-    public function getActivityId()
-    {
-        return $this->activityId;
-    }
-    public function setActivityId($activityId)
-    {
-        $this->activityId = $activityId;
-    }
+
     public function getEquipment()
     {
         return $this->equipment;
     }
-    public function setEquipment($equipment)
-    {
-        $this->equipment = $equipment;
-    }
-    public function getAdminId()
-    {
-        return $this->adminId;
-    }
+
 }
 ?>

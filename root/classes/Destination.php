@@ -2,38 +2,36 @@
 
 class Destination
 {
-    private $destinationId; //primary key
+
     private $city;
-    private $adminId; //foreign key
+    private $price;
 
-
-    public function __construct($destinationId, $city, $adminId)
+    /**
+     * @param $city
+     * @param $price
+     */
+    public function __construct($city, $price)
     {
-        $this->destinationId = $destinationId;
         $this->city = $city;
-        $this->adminId = $adminId;
+        $this->price = $price;
     }
 
-    //getters and setters
-    public function getDestinationId()
-    {
-        return $this->destinationId;
-    }
-    public function setDestinationId($destinationId)
-    {
-        $this->destinationId = $destinationId;
-    }
+    /**
+     * @return mixed
+     */
     public function getCity()
     {
         return $this->city;
     }
-    public function setCity($city)
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
     {
-        $this->city = $city;
+        return $this->price;
     }
-    public function getAdminId()
-    {
-        return $this->adminId;
-    }
+
+
 }
 ?>
