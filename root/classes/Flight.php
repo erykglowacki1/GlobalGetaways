@@ -14,5 +14,35 @@ class Flight
         $this->numBags = $numBags;
         $this->adminId = $adminId;
     }
+
+    //getters and setters
+    public function getFlightId()
+    {
+        return $this->flightId;
+    }
+    public function setFlightId($flightId)
+    {
+        $this->flightId = $flightId;
+    }
+    public function getDistance()
+    {
+        return $this->distance;
+    }
+    public function setDistance($distance)
+    {
+        $this->distance = $distance;
+    }
+    public function getNumBags()
+    {
+        return $this->numBags;
+    }
+    public function setNumBags($numBags)
+    {
+        $this->numBags = $numBags;
+    }
+    public function getAdminId()
+    {
+        return $this->adminId;
+    }
 }
 ?>
