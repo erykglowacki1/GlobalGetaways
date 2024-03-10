@@ -2,8 +2,8 @@
 
 class Miles
 {
-    public $milesId;
-    public $pointsNum;
+    private $milesId; //primary key
+    private $pointsNum;
 
     public function __construct($milesId, $pointsNum)
     {

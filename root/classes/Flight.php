@@ -2,10 +2,10 @@
 
 class Flight
 {
-    public $flightId; //primary key
-    public $distance;
-    public $numBags;
-    public $adminId; //foreign key
+    private $flightId; //primary key
+    private $distance;
+    private $numBags;
+    private $adminId; //foreign key
 
     public function __construct($flightId, $distance, $numBags, $adminId)
     {

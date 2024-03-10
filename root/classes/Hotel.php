@@ -2,10 +2,10 @@
 
 class Hotel
 {
-    public $hotelId; //primary key
-    public $hotelName;
-    public $numRooms;
-    public $adminId; //foreign key
+    private $hotelId; //primary key
+    private $hotelName;
+    private $numRooms;
+    private $adminId; //foreign key
 
     public function __construct($hotelId, $hotelName, $numRooms, $adminId)
     {

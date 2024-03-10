@@ -2,11 +2,11 @@
 
 class Product
 {
-    public $productId; //primary key
-    public $flightId; //foreign key
-    public $activityId; //foreign key
-    public $hotelId; //foreign key
-    public $destinationId; //foreign key
+    private $productId; //primary key
+    private $flightId; //foreign key
+    private $activityId; //foreign key
+    private $hotelId; //foreign key
+    private $destinationId; //foreign key
 
     public function __construct($productId, $flightId, $activityId, $hotelId, $destinationId)
     {

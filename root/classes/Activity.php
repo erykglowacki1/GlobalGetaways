@@ -2,9 +2,10 @@
 
 class Activity
 {
-    public $activityId; //primary key
-    public $equipment;
-    public $adminId; //foreign key
+    private $activityId; //primary key
+    private $equipment;
+    private $adminId; //foreign key
+
 
     public function __construct($activityId, $equipment, $adminId)
     {

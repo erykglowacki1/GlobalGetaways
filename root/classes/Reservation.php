@@ -2,10 +2,10 @@
 
 class Reservation
 {
-    public $reservationId; //primary key
-    public $price;
-    public $productId; //foreign key
-    public $userId; //foreign key
+    private $reservationId; //primary key
+    private $price;
+    private $productId; //foreign key
+    private $userId; //foreign key
 
     public function __construct($reservationId, $price, $productId, $userId)
     {
@@ -39,5 +39,6 @@ class Reservation
     {
         return $this->userId;
     }
+
 }
 ?>

@@ -2,12 +2,12 @@
 
 class User
 {
-    public $userId; //primary key
-    public $userName;
-    public $userEmail;
-    public $useAge;
-    public $userPassword;
-    public $milesId; //foreign key
+    private $userId; //primary key
+    private $userName;
+    private $userEmail;
+    private $useAge;
+    private $userPassword;
+    private $milesId; //foreign key
 
     public function __construct($userId, $userName, $userEmail, $useAge, $userPassword, $milesId)
     {

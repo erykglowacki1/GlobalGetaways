@@ -2,9 +2,10 @@
 
 class Destination
 {
-    public $destinationId; //primary key
-    public $city;
-    public $adminId; //foreign key
+    private $destinationId; //primary key
+    private $city;
+    private $adminId; //foreign key
+
 
     public function __construct($destinationId, $city, $adminId)
     {

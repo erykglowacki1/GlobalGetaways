@@ -2,9 +2,10 @@
 
 class Payment
 {
-    public $paymentId; //primary key
-    public $cardNum;
-    public $reservationId; //foreign key
+    private $paymentId; //primary key
+    private $cardNum;
+    private $reservationId; //foreign key
+
 
     public function __construct($paymentId, $cardNum, $reservationId)
     {
