@@ -7,7 +7,7 @@ class User
     private $userEmail;
     private $useAge;
     private $userPassword;
-    private $milesId; //foreign key
+    private $milesId;
 
     public function __construct($userId, $userName, $userEmail, $useAge, $userPassword, $milesId)
     {
@@ -23,41 +23,21 @@ class User
     {
         return $this->userId;
     }
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    }
     public function getUserName()
     {
         return $this->userName;
-    }
-    public function setUserName($userName)
-    {
-        $this->userName = $userName;
     }
     public function getUserEmail()
     {
         return $this->userEmail;
     }
-    public function setUserEmail($userEmail)
-    {
-        $this->userEmail = $userEmail;
-    }
     public function getUseAge()
     {
         return $this->useAge;
     }
-    public function setUseAge($useAge)
-    {
-        $this->useAge = $useAge;
-    }
     public function getUserPassword()
     {
         return $this->userPassword;
-    }
-    public function setUserPassword($userPassword)
-    {
-        $this->userPassword = $userPassword;
     }
     public function getMilesId()
     {

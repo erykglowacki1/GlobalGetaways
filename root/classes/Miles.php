@@ -15,17 +15,9 @@ class Miles
     {
         return $this->milesId;
     }
-    public function setMilesId($milesId)
-    {
-        $this->milesId = $milesId;
-    }
     public function getPointsNum()
     {
         return $this->pointsNum;
-    }
-    public function setPointsNum($pointsNum)
-    {
-        $this->pointsNum = $pointsNum;
     }
 }
 ?>

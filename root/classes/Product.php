@@ -3,10 +3,10 @@
 class Product
 {
     private $productId; //primary key
-    private $flightId; //foreign key
-    private $activityId; //foreign key
-    private $hotelId; //foreign key
-    private $destinationId; //foreign key
+    private $flightId;
+    private $activityId;
+    private $hotelId;
+    private $destinationId;
 
     public function __construct($productId, $flightId, $activityId, $hotelId, $destinationId)
     {
@@ -20,10 +20,6 @@ class Product
     public function getProductId()
     {
         return $this->productId;
-    }
-    public function setProductId($productId)
-    {
-        $this->productId = $productId;
     }
     public function getFlightId()
     {

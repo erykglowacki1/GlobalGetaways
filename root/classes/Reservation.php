@@ -3,14 +3,14 @@
 class Reservation
 {
     private $reservationId; //primary key
-    private $price;
-    private $productId; //foreign key
-    private $userId; //foreign key
+    private $totalPrice;
+    private $productId;
+    private $userId;
 
-    public function __construct($reservationId, $price, $productId, $userId)
+    public function __construct($reservationId, $totalPrice, $productId, $userId)
     {
         $this->reservationId = $reservationId;
-        $this->price = $price;
+        $this->totalPrice = $totalPrice;
         $this->productId = $productId;
         $this->userId = $userId;
     }
@@ -19,17 +19,9 @@ class Reservation
     {
         return $this->reservationId;
     }
-    public function setReservationId($reservationId)
-    {
-        $this->reservationId = $reservationId;
-    }
     public function getPrice()
     {
-        return $this->price;
-    }
-    public function setPrice($price)
-    {
-        $this->price = $price;
+        return $this->totalPrice;
     }
     public function getProductId()
     {
@@ -39,6 +31,5 @@ class Reservation
     {
         return $this->userId;
     }
-
 }
 ?>
