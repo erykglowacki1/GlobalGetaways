@@ -10,24 +10,18 @@ if (isset($_POST['search_submit'])) {
         require "common.php";
         require_once 'connection/connectionToDB.php';
 
-
         $sql = "SELECT * FROM Destination WHERE City = :City";
         $City = $_POST['search_place'];
         $statement = $connection->prepare($sql);
         $statement->bindParam(':City', $City, PDO::PARAM_STR);
         $statement->execute();
-
-
         $result = $statement->fetchAll();
-
 
         if ($statement->rowCount() == 0) {
             $error_message = "No results found for " . htmlspecialchars($City) . ".";
         }
     } catch (PDOException $error) {
-
         $error_message = "An error occurred: " . $error->getMessage();
-
     }
 }
 ?>

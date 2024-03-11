@@ -29,8 +29,6 @@ class Activity
         return $this->price;
     }
 
-    //getters and setters
-
     public function getEquipment()
     {
         return $this->equipment;
