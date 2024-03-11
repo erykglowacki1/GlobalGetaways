@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 <head>
     <link rel="stylesheet" href="css/payment.css">
 </head>
-<form method="post">
+<form  action = 'final.php' method="post">
     <label for="CardNum">Card Number</label>
     <input type="number" name="CardNum" id="CardNum">
 
