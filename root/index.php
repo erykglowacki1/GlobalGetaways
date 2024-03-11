@@ -26,13 +26,11 @@ if (isset($_POST['search_submit'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Results.css">
     <title>Search</title>
+
 </head>
 <body>
 <h2 style="text-align: center;">Search for Destinations</h2>
@@ -58,15 +56,27 @@ if (isset($_POST['search_submit'])) {
     <table>
         <thead>
         <tr>
-            <th>Id</th>
             <th>City</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Book</th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($result as $row): ?>
             <tr>
-                <td><?php echo escape($row["id"]); ?></td>
                 <td><?php echo escape($row["City"]); ?></td>
+                <td><?php echo escape($row["Description"]); ?></td>
+                <td><?php echo escape($row["Price"]); ?></td>
+                <td>
+
+                    <form action="Auth.php" method="post">
+                        <input type="hidden" name="city" value="<?php echo escape($row["City"]); ?>">
+                        <input type="hidden" name="Description" value="<?php echo escape($row["Description"]); ?>">
+                        <input type="hidden" name="price" value="<?php echo escape($row["Price"]); ?>">
+                        <input type="submit" name="book_submit" value="Book Here">
+                    </form>
+                </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
@@ -74,6 +84,7 @@ if (isset($_POST['search_submit'])) {
 <?php elseif ($error_message): ?>
     <p><?php echo $error_message; ?></p>
 <?php endif; ?>
+
 </body>
 </html>
 
