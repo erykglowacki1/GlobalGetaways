@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/adminFiles/upload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/adminFiles/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/classes/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/adminFiles/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/adminFiles/adminAddActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/adminAddActivity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/adminFiles/adminAddFlight.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/adminAddDestination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/adminFiles/deleteActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/deleteActivity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/adminFiles/deleteFlight.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/deleteFlight.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/adminFiles/adminAddDestination.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/adminAddDestination.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/classes/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Destination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Flight.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Flight.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/connection/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/connection/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +85,7 @@
       <workItem from="1709585338463" duration="15635000" />
       <workItem from="1709717796772" duration="1703000" />
       <workItem from="1709719510991" duration="9332000" />
-      <workItem from="1709889478405" duration="14784000" />
+      <workItem from="1709889478405" duration="18331000" />
     </task>
     <servers />
   </component>

@@ -6,31 +6,39 @@ class Destination
     private $city;
     private $price;
 
-    /**
-     * @param $city
-     * @param $price
-     */
-    public function __construct($city, $price)
-    {
-        $this->city = $city;
-        $this->price = $price;
-    }
+    private $description;
+
 
     /**
-     * @return mixed
-     */
-    public function getCity()
-    {
-        return $this->city;
-    }
+ * @param $city
+ * @param $price
+ * @param $description
+ */public function __construct($city, $price, $description)
+{
+    $this->city = $city;
+    $this->price = $price;
+    $this->description = $description;
+}/**
+ * @return mixed
+ */
+public function getCity()
+{
+    return $this->city;
+}/**
+ * @return mixed
+ */
+public function getPrice()
+{
+    return $this->price;
+}/**
+ * @return mixed
+ */
+public function getDescription()
+{
+    return $this->description;
+}
 
-    /**
-     * @return mixed
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
+
 
 
 }

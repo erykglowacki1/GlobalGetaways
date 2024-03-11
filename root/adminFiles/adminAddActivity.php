@@ -12,10 +12,10 @@ if (isset($_POST['submit'])) {
             $_POST['Price']
         );
 
-        // Prepare the SQL statement
+        // Prepare SQL statement
         $sql = "INSERT INTO Activity (Equipment, Price) VALUES (:equipment, :price)";
 
-        // Bind parameters and execute the statement
+        // Bind parameters + execute statement
         $statement = $connection->prepare($sql);
         $equipment = $activity->getEquipment();
         $statement->bindParam(':equipment', $equipment);

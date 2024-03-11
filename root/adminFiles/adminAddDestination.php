@@ -7,20 +7,23 @@ if (isset($_POST['submit'])) {
         require_once '../connection/connectionToDB.php';
 
         // Create an instance of Activity
-        $activity = new Destination(
+        $destination = new Destination(
             $_POST['City'],
-            $_POST['Price']
+            $_POST['Price'],
+            $_POST['Description']
         );
 
         // Prepare the SQL statement
-        $sql = "INSERT INTO Destination (City,Price) VALUES (:city,:price)";
+        $sql = "INSERT INTO Destination (City,Price,Description) VALUES (:city,:price,:description)";
 
         // Bind parameters and execute the statement
         $statement = $connection->prepare($sql);
-        $city = $activity->getCity();
+        $city = $destination->getCity();
         $statement->bindParam(':city', $city);
-        $price = $activity->getPrice();
+        $price = $destination->getPrice();
         $statement->bindParam(':price',$price);
+        $description = $destination->getDescription();
+        $statement->bindParam(':description',$description);
 
 
         $statement->execute();
@@ -42,10 +45,14 @@ require "../templates/header.php";
 <form method="post">
     <label for="City">City</label>
     <input type="text" name="City" id="City">
-    <input type="submit" name="submit" value="Submit">
+
+    <label for="Description">Description</label>
+    <input type="text" name="Description" id="Description">
+
 
     <label for="Price">Activity Price</label>
     <input type="number" name="Price" id="Price">
+    <input type="submit" name="submit" value="Submit">
 </form>
 <span class="returnToPage"> <a href="admin.php"">Back to main admin page</a></span>
 
