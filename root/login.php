@@ -25,7 +25,7 @@ if (isset($_POST['register'])) {
 
         $sql = sprintf(
             "INSERT INTO %s (%s) values (%s)",
-            "Users",
+            "User",
             implode(", ", array_keys($new_user)),
             ":" . implode(", :", array_keys($new_user))
         );
@@ -56,7 +56,7 @@ if(isset($_POST['login'])){
         $password = escape($_POST['password']);
 
         $sql = "SELECT * 
-                FROM Users
+                FROM User
                 WHERE email = :email";
 
         $statement->bindParam(':email', $username, PDO::PARAM_STR);

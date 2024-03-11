@@ -39,6 +39,7 @@ try {
         <th>id</th>
         <th>City</th>
         <th>Price</th>
+        <th>Description</th>
     </tr>
     </thead>
     <tbody>
@@ -47,6 +48,7 @@ try {
             <td><?php echo escape($row["id"]); ?></td>
             <td><?php echo escape($row["City"]); ?></td>
             <td><?php echo escape($row["Price"]); ?></td>
+            <td><?php echo escape($row["Description"]); ?></td>
             <td><a href="deleteFlight.php?id=<?php echo escape($row["id"]);
                 ?>">Delete</a></td>
         </tr>

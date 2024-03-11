@@ -2,13 +2,22 @@
 
 class Admin extends User
 {
+
+    private $id;
 private $accessLevel;
 
-public function __construct($userId, $userName, $userEmail, $useAge, $userPassword, $milesId,$accessLevel)
+public function __construct($id, $userName, $userEmail, $useAge, $userPassword, $milesId)
 {
-    parent::__construct($userId, $userName, $userEmail, $useAge, $userPassword, $milesId);
-    $this->accessLevel = $accessLevel;
+    parent::__construct($id, $userName, $userEmail, $useAge, $userPassword, $milesId);
 }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * @return mixed
@@ -17,5 +26,7 @@ public function __construct($userId, $userName, $userEmail, $useAge, $userPasswo
     {
         return $this->accessLevel;
     }
+
+
 
 }
