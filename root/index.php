@@ -47,12 +47,14 @@ if (isset($_POST['search_submit'])) {
             <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
         <?php } ?>
     </select>
+    <label for="num-of-bags">Number of Bags:</label>
+    <input type="number" id="num-of-bags" name="num_of_bags" min="0" required>
 
     <input type="submit" name="search_submit" value="Search">
 </form>
 
 <?php if (!empty($result)): ?>
-    <h2>Results</h2>
+    <h2>Best Flight Found</h2>
     <table>
         <thead>
         <tr>

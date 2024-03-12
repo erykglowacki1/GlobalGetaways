@@ -27,6 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['book_submit'])) {
             <td><?php echo $price; ?></td>
         </tr>
     </table>
+
+    <!-- Add a link to purchasePage.php -->
+   <class id >
+       <p>Ready to purchase? <a href="purchasePage.php">Proceed to purchase</a></p>
+   </class>
+
     <?php
 } else {
     // If form was not submitted, display a message
