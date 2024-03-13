@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/root/adminFiles/adminAddHotel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/adminFiles/deleteHotel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/css/booking.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/booking.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/adminFiles/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Hotel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

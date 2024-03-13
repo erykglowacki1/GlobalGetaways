@@ -35,5 +35,15 @@ require "../templates/header.php";
             <a href="deleteActivity.php">Delete activities</a>
         </td>
     </tr>
+    <tr>
+        <td>
+            <a href="adminAddHotel.php">Add new Hotel </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="deleteHotel.php">Delete Hotels</a>
+        </td>
+    </tr>
     </tbody>
 </table>

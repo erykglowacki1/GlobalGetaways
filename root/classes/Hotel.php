@@ -2,22 +2,19 @@
 
 class Hotel
 {
-    private $hotelId; //primary key
+    //primary key
     private $hotelName;
     private $numRooms;
     private $price;
-    public function __construct($hotelId, $hotelName, $numRooms, $price)
+    public function __construct( $hotelName, $numRooms, $price)
     {
-        $this->hotelId = $hotelId;
+
         $this->hotelName = $hotelName;
         $this->numRooms = $numRooms;
         $this->price = $price;
     }
     //getters and setters
-    public function getHotelId()
-    {
-        return $this->hotelId;
-    }
+
     public function getHotelName()
     {
         return $this->hotelName;
