@@ -34,5 +34,6 @@ class Activity
         return $this->equipment;
     }
 
+
 }
 ?>

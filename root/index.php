@@ -47,9 +47,6 @@ if (isset($_POST['search_submit'])) {
             <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
         <?php } ?>
     </select>
-    <label for="num-of-bags">Number of Bags:</label>
-    <input type="number" id="num-of-bags" name="num_of_bags" min="0" required>
-
     <input type="submit" name="search_submit" value="Search">
 </form>
 
@@ -76,7 +73,9 @@ if (isset($_POST['search_submit'])) {
                         <input type="hidden" name="city" value="<?php echo escape($row["City"]); ?>">
                         <input type="hidden" name="Description" value="<?php echo escape($row["Description"]); ?>">
                         <input type="hidden" name="price" value="<?php echo escape($row["Price"]); ?>">
+                        <input type="hidden" name="destination_id" value="<?php echo escape($row["id"]); ?>">
                         <input type="submit" name="book_submit" value="Book Here">
+
                     </form>
                 </td>
             </tr>

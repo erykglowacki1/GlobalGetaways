@@ -30,7 +30,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <ul class="nav-links">
-            <li><i class="fa-solid fa-house"></i><a href="../index.php">Home</a></li>
+            <li><i class="fa-solid fa-house"></i><a href="">Home</a></li>
             <li><i class="fa-solid fa-location-dot"></i><a href="#">Destinations</a></li>
             <li><i class="fa-solid fa-plane-departure"></i><a href="#">Flights</a></li>
             <li><i class="fa-solid fa-person-skiing"></i><a href="#">Attractions</a></li>
