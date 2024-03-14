@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="GlobalGetaways@localhost" uuid="884fd66b-b7bb-410e-97dc-135429636627">
+    <data-source source="LOCAL" name="GlobalGetaways@localhost" uuid="9c3359b3-6df6-478c-a1cb-5b8a1e69b485">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>

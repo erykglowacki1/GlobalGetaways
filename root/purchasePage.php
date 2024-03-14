@@ -12,24 +12,26 @@ if (isset($_POST['submit'])) {
             // Create an instance of Activity
             $payment = new Payment(
                 $_POST['CardNum'],
-                $_POST['ownerName']
+                $_POST['userName'],
+                $_POST['reservationid']
             );
 
             // Prepare SQL statement
-            $sql = "INSERT INTO Payment (CardNum,ownerName) VALUES (:CardNum,:ownerName)";
+            $sql = "INSERT INTO Payment (CardNum,userName,Reservation_id) VALUES (:CardNum,:userName,:reservationid)";
 
             // Bind parameters + execute statement
             $statement = $connection->prepare($sql);
             $CardNum = $payment->getCardNum();
             $statement->bindParam(':CardNum', $CardNum);
-            $ownerName = $payment->getOwnerName();
-            $statement->bindParam(':ownerName',$ownerName);
+            $userName = $payment->getOwnerName();
+            $statement->bindParam(':userName',$userName);
+
 
             $statement->execute();
 
             echo "Payment Confirmed";
         } else {
-            echo "CardNum and/or ownerName not set";
+            echo "CardNum and/or userName not set";
         }
     } catch (PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
@@ -44,7 +46,7 @@ if (isset($_POST['submit'])) {
 <head>
     <link rel="stylesheet" href="css/payment.css">
 </head>
-<form  action = 'final.php' method="post">
+<form method="post">
 
     <label for="CardNum">Card Number</label>
     <input type="number" name="CardNum" id="CardNum">
@@ -52,20 +54,22 @@ if (isset($_POST['submit'])) {
     <label for="expirationDate">Expiration Date</label>
     <input type="date" name="expirationDate" id="expirationDate">
 
-    <label for="ownerName">CardHolders Name</label>
-    <input type="text" name="ownerName" id="ownerName">
+    <label for="userName">CardHolders Name</label>
+    <input type="text" name="userName" id="userName">
 
     <label for="cvv">CVV</label>
     <input type="number" name="cvv" id="cvv">
 
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" name="submit" value="submit">
 </form>
 <h2>Final Booking Information</h2>
+
+
+
 
 <?php
 if (isset($_POST['destination_id'])) {
     $destination_id = $_POST['destination_id'];
-    require_once 'connection/connectionToDB.php';
 
     try {
         $sql = "SELECT Destination.City, Destination.Description, Destination.Price

@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
         $statement->execute();
 
         echo $city . ' successfully added';
+
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }

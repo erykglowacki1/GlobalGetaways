@@ -10,11 +10,12 @@ if (isset($_POST['submit'])) {
         $hotel = new Hotel(
             $_POST['HotelName'],
             $_POST['NumOfRooms'],
-            $_POST['Price']
+            $_POST['Price'],
+            $_POST['Destination_id']
         );
 
         // Prepare SQL statement
-        $sql = "INSERT INTO Hotel (HOTELNAME, NUMOFROOMS, PRICE) VALUES (:HotelName,:NumOfRooms,:Price)";
+        $sql = "INSERT INTO Hotel (HOTELNAME, NUMOFROOMS, PRICE,Destination_id) VALUES (:HotelName,:NumOfRooms,:Price,:Destination_id)";
 
         // Bind parameters + execute statement
         $statement = $connection->prepare($sql);
@@ -24,6 +25,8 @@ if (isset($_POST['submit'])) {
         $statement->bindParam(':NumOfRooms', $NumOfRooms);
         $Price = $hotel->getPrice();
         $statement->bindParam(':Price', $Price);
+        $destinationid = $hotel->getDestinationid();
+        $statement->bindParam("Destination_id",$destinationid);
 
         $statement->execute();
 
@@ -51,6 +54,9 @@ require "../templates/header.php";
 
     <label for="Price">Price</label>
     <input type="number" name="Price" id="Price">
+
+    <label for="Destination_id">ID for destination</label>
+    <input type="number" name="Destination_id" id="Destination_id">
 
     <input type="submit" name="submit" value="Submit">
 </form>

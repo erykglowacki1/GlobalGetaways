@@ -16,25 +16,33 @@ try {
         $statement = $connection->prepare($sql);
         $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
         $statement->execute();
-        $activities_result = $statement->fetchAll();
+        $activities_result = $statement->fetchAll(PDO::FETCH_ASSOC);
     } else {
         // Handle if destination_id is not received
         echo "No destination_id received.";
         $activities_result = array(); // Empty result
+    }
+
+    if(isset($destination_id)) {
+        $sql = "SELECT * FROM Hotel WHERE Destination_id = :destination_id";
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
+        $statement->execute();
+        $hotels_result = $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 } catch (PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
 }
 ?>
 
-    <h2>Add an Activity</h2>
-
+<h2>Add an Activity</h2>
+<form method="post" action="">
     <table>
         <thead>
         <tr>
             <th>Activity Type</th>
             <th>Price</th>
-            <th>Add to package</th> <!-- Add column for the Buy button -->
+            <th>Add to package</th>
         </tr>
         </thead>
         <tbody>
@@ -43,31 +51,13 @@ try {
                 <td><?php echo escape($row["Equipment"]); ?></td>
                 <td><?php echo escape($row["Price"]); ?></td>
                 <td>
-                    <!-- Button to buy the activity -->
-                    <form method="post" action="">
-                        <input type="hidden" name="activity_id" value="<?php echo $row['id']; ?>">
-                        <input type="checkbox" value="Buy">
-                    </form>
+                    <input type="checkbox" name="activity_id[]" value="<?php echo $row['id']; ?>">
                 </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
 
-<?php
-
-if(isset($destination_id)) {
-    try {
-        $sql = "SELECT * FROM Hotel WHERE Destination_id = :destination_id";
-        $statement = $connection->prepare($sql);
-        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
-        $statement->execute();
-        $hotels_result = $statement->fetchAll();
-    } catch (PDOException $error) {
-        echo $sql . "<br>" . $error->getMessage();
-    }
-}
-?>
     <h2>Add a Hotel</h2>
     <table>
         <thead>
@@ -75,7 +65,7 @@ if(isset($destination_id)) {
             <th>Hotel Name</th>
             <th>Number of rooms needed</th>
             <th>Price</th>
-            <th>Add to package</th> <!-- Add column for the Buy button -->
+            <th>Add to package</th>
         </tr>
         </thead>
         <tbody>
@@ -85,60 +75,39 @@ if(isset($destination_id)) {
                 <td><?php echo escape($row["NumOfRooms"]); ?></td>
                 <td><?php echo escape($row["Price"]); ?></td>
                 <td>
-                    <!-- Button to buy the hotel -->
-                    <form method="post" action="">
-                        <input type="hidden" name="hotel_id" value="<?php echo $row['id']; ?>">
-                        <input type="checkbox" value="Buy">
-                    </form>
+                    <input type="checkbox" name="hotel_id[]" value="<?php echo $row['id']; ?>">
                 </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
+
+    <input type="hidden" name="destination_id" value="<?php echo $destination_id; ?>">
+    <input type="submit" name="submit" value="Add Selected to Package">
+</form>
+
 <?php
-if (isset($_POST['destination_id'])) {
-    $destination_id = $_POST['destination_id'];
+// Handle form submission
+if(isset($_POST['submit'])) {
+    $activity_ids = isset($_POST['activity_id']) ? $_POST['activity_id'] : array();
+    $hotel_ids = isset($_POST['hotel_id']) ? $_POST['hotel_id'] : array();
 
-    try {
-        $sql = "SELECT Destination.City, Destination.Description, Destination.Price
-                FROM Destination
-                INNER JOIN Product ON Destination.id = Product.Destination_id 
-                WHERE Product.Destination_id = :destination_id";
+    // Insert selected activities into Product table
+    foreach($activity_ids as $activity_id) {
+        $sql = "INSERT INTO Product (Activity_id) VALUES (:activity_id)";
         $statement = $connection->prepare($sql);
-        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
+        $statement->bindParam(':activity_id', $activity_id, PDO::PARAM_INT);
         $statement->execute();
-        $booked_destinations = $statement->fetchAll(PDO::FETCH_ASSOC);
-    } catch (PDOException $error) {
-        echo "Error: " . $error->getMessage();
     }
 
-    $booked_destination_objects = array();
-    foreach ($booked_destinations as $destination) {
-        $booked_destination_objects[] = new Destination($destination['City'], $destination['Description'], $destination['Price']);
+    // Insert selected hotels into Product table
+    foreach($hotel_ids as $hotel_id) {
+        $sql = "INSERT INTO Product (Hotel_id) VALUES (:hotel_id)";
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':hotel_id', $hotel_id, PDO::PARAM_INT);
+        $statement->execute();
     }
+
+    echo "Selected items added to package.";
 }
 ?>
-
-<?php if (!empty($booked_destination_objects)): ?>
-    <!-- Display booked destination information -->
-    <h2>Everything you have booked so far :</h2>
-    <table>
-        <?php foreach ($booked_destination_objects as $destination) : ?>
-            <tr>
-                <th>City</th>
-                <td><?php echo escape($destination->getCity()); ?></td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td><?php echo escape($destination->getDescription()); ?></td>
-            </tr>
-            <tr>
-                <th>Price</th>
-                <td><?php echo escape($destination->getPrice()); ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-    <a href="purchasePage.php" class="button">Proceed to Purchase</a>
-<?php else: ?>
-    <p>No booked destination found.</p>
-<?php endif; ?>

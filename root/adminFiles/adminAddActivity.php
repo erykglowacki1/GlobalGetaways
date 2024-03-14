@@ -9,11 +9,12 @@ if (isset($_POST['submit'])) {
         // Create an instance of Activity
         $activity = new Activity(
             $_POST['Equipment'],
-            $_POST['Price']
+            $_POST['Price'],
+            $_POST['Destination_id']
         );
 
         // Prepare SQL statement
-        $sql = "INSERT INTO Activity (Equipment, Price) VALUES (:equipment, :price)";
+        $sql = "INSERT INTO Activity (Equipment, Price,Destination_id) VALUES (:equipment, :price,:Destination_id)";
 
         // Bind parameters + execute statement
         $statement = $connection->prepare($sql);
@@ -21,6 +22,8 @@ if (isset($_POST['submit'])) {
         $statement->bindParam(':equipment', $equipment);
         $price = $activity->getPrice();
         $statement->bindParam(':price', $price);
+        $destinationid = $activity->getDestinationid();
+        $statement->bindParam("Destination_id",$destinationid);
 
         $statement->execute();
 
@@ -45,6 +48,9 @@ require "../templates/header.php";
 
     <label for="Price">Activity Price</label>
     <input type="number" name="Price" id="Price">
+
+    <label for="Destination_id">ID for destination</label>
+    <input type="number" name="Destination_id" id="Destination_id">
 
     <input type="submit" name="submit" value="Submit">
 </form>

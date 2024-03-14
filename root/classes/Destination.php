@@ -2,11 +2,21 @@
 
 class Destination
 {
+    private $id;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     private $city;
     private $price;
 
     private $description;
+
 
 
     /**

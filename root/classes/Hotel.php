@@ -6,14 +6,24 @@ class Hotel
     private $hotelName;
     private $numRooms;
     private $price;
-    public function __construct( $hotelName, $numRooms, $price)
-    {
 
+    private $destinationid;
+
+    //getters and setters
+
+    /**
+     * @param $hotelName
+     * @param $numRooms
+     * @param $price
+     * @param $destinationid
+     */
+    public function __construct($hotelName, $numRooms, $price, $destinationid)
+    {
         $this->hotelName = $hotelName;
         $this->numRooms = $numRooms;
         $this->price = $price;
+        $this->destinationid = $destinationid;
     }
-    //getters and setters
 
     public function getHotelName()
     {
@@ -27,5 +37,14 @@ class Hotel
     {
         return $this->price;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDestinationid()
+    {
+        return $this->destinationid;
+    }
+
 }
 ?>
