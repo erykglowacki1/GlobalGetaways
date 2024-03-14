@@ -8,7 +8,6 @@ try {
     require "common.php";
     require_once 'connection/connectionToDB.php';
 
-    // Check if destination_id is set
     if(isset($_POST['destination_id'])) {
         $destination_id = $_POST['destination_id'];
 
@@ -47,7 +46,7 @@ try {
                     <!-- Button to buy the activity -->
                     <form method="post" action="">
                         <input type="hidden" name="activity_id" value="<?php echo $row['id']; ?>">
-                        <input type="submit" value="Buy">
+                        <input type="checkbox" value="Buy">
                     </form>
                 </td>
             </tr>
@@ -70,7 +69,6 @@ if(isset($destination_id)) {
 }
 ?>
     <h2>Add a Hotel</h2>
-
     <table>
         <thead>
         <tr>
@@ -90,7 +88,7 @@ if(isset($destination_id)) {
                     <!-- Button to buy the hotel -->
                     <form method="post" action="">
                         <input type="hidden" name="hotel_id" value="<?php echo $row['id']; ?>">
-                        <input type="submit" value="Buy">
+                        <input type="checkbox" value="Buy">
                     </form>
                 </td>
             </tr>
@@ -123,7 +121,7 @@ if (isset($_POST['destination_id'])) {
 
 <?php if (!empty($booked_destination_objects)): ?>
     <!-- Display booked destination information -->
-    <h2>Booked Destination Information</h2>
+    <h2>Everything you have booked so far :</h2>
     <table>
         <?php foreach ($booked_destination_objects as $destination) : ?>
             <tr>
@@ -140,6 +138,7 @@ if (isset($_POST['destination_id'])) {
             </tr>
         <?php endforeach; ?>
     </table>
+    <a href="purchasePage.php" class="button">Proceed to Purchase</a>
 <?php else: ?>
     <p>No booked destination found.</p>
 <?php endif; ?>

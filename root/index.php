@@ -69,10 +69,10 @@ if (isset($_POST['search_submit'])) {
                 <td><?php echo escape($row["Price"]); ?></td>
                 <td>
 
-                    <form action="Auth.php" method="post">
-                        <input type="hidden" name="city" value="<?php echo escape($row["City"]); ?>">
+                    <form action="purchasePage.php" method="post">
+                        <input type="hidden" name="City" value="<?php echo escape($row["City"]); ?>">
                         <input type="hidden" name="Description" value="<?php echo escape($row["Description"]); ?>">
-                        <input type="hidden" name="price" value="<?php echo escape($row["Price"]); ?>">
+                        <input type="hidden" name="Price" value="<?php echo escape($row["Price"]); ?>">
                         <input type="hidden" name="destination_id" value="<?php echo escape($row["id"]); ?>">
                         <input type="submit" name="book_submit" value="Book Here">
 

@@ -7,10 +7,9 @@
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/connection/connectionToDB.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/connection/connectionToDB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/final.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/final.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/purchasePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/purchasePage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

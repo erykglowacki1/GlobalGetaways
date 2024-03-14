@@ -1,7 +1,7 @@
 <?php
 require 'templates/header.php';
 require_once "classes/Payment.php";
-
+require "classes/Destination.php";
 if (isset($_POST['submit'])) {
     require "common.php";
     try {
@@ -39,10 +39,13 @@ if (isset($_POST['submit'])) {
 
 ?>
 
+
+
 <head>
     <link rel="stylesheet" href="css/payment.css">
 </head>
 <form  action = 'final.php' method="post">
+
     <label for="CardNum">Card Number</label>
     <input type="number" name="CardNum" id="CardNum">
 
@@ -57,5 +60,53 @@ if (isset($_POST['submit'])) {
 
     <input type="submit" name="submit" value="Submit">
 </form>
+<h2>Final Booking Information</h2>
 
+<?php
+if (isset($_POST['destination_id'])) {
+    $destination_id = $_POST['destination_id'];
+    require_once 'connection/connectionToDB.php';
 
+    try {
+        $sql = "SELECT Destination.City, Destination.Description, Destination.Price
+                FROM Destination
+                INNER JOIN Product ON Destination.id = Product.Destination_id 
+                WHERE Product.Destination_id = :destination_id";
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
+        $statement->execute();
+        $booked_destinations = $statement->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $error) {
+        echo "Error: " . $error->getMessage();
+    }
+
+    $booked_destination_objects = array();
+    foreach ($booked_destinations as $destination) {
+        $booked_destination_objects[] = new Destination($destination['City'], $destination['Description'], $destination['Price']);
+    }
+}
+?>
+
+<?php if (!empty($booked_destination_objects)): ?>
+    <!-- Display booked destination information -->
+    <h2>Everything you have booked so far :</h2>
+    <table>
+        <?php foreach ($booked_destination_objects as $destination) : ?>
+            <tr>
+                <th>City</th>
+                <td><?php echo escape($destination->getCity()); ?></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><?php echo escape($destination->getDescription()); ?></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td><?php echo escape($destination->getPrice()); ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <a href="purchasePage.php" class="button">Proceed to Purchase</a>
+<?php else: ?>
+    <p>No booked destination found.</p>
+<?php endif; ?>
