@@ -1,49 +1,46 @@
-
 <?php
 require_once 'common.php';
 require_once 'connection/connectionToDB.php';
+session_start();
 
 if(isset($_POST['login'])){
-    $username = $_POST['Email'];
-    $password = $_POST['Password'];
+    $email = $_POST['username'];
+    $password = $_POST['password'];
 
     try {
-        $sql = "SELECT * FROM User WHERE email = :email";
-        $statement = $pdo->prepare($sql);
-        $statement->bindParam(':email', $username, PDO::PARAM_STR);
+        $sql = "SELECT User.*, Admin.accessLevel FROM User INNER JOIN Admin ON User.Admin_id = Admin.id WHERE User.Email = :email";
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':email', $email, PDO::PARAM_STR);
         $statement->execute();
         $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['password'])) {
-            // Assuming the user is an admin based on your criteria (e.g., access level)
-            if ($user['accessLevel'] == 'admin') { // Assuming 'accessLevel' determines admin status
-                echo "Welcome, " . htmlspecialchars($user['fullName']) . "! You are now logged in as an admin.";
+        if ($user && $password === $user['Password']) {
+            if ($user['accessLevel'] == 1) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['access_level'] = $user['accessLevel'];
+
+                header("Location: adminFiles/admin.php");
+                exit;
             } else {
                 echo "You are not authorized to access the admin panel.";
             }
         } else {
             echo "Invalid username or password.";
         }
-    } catch(PDOException $error) {
+    } catch (PDOException $error) {
         echo "Error: " . $error->getMessage();
     }
 }
 ?>
 
-
-
-
 <h1>Admin Login Page</h1>
 <main>
-    <div id="loginForm" style="display: block;>
+    <div id="loginForm" style="display: block;">
         <h2>Login</h2>
         <form method="post">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="submit" name="login" value="Login">
-    </form>
-
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" name="login" value="Login">
+        </form>
     </div>
-
-
 </main>
