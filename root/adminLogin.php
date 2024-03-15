@@ -8,7 +8,10 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
 
     try {
-        $sql = "SELECT User.*, Admin.accessLevel FROM User INNER JOIN Admin ON User.Admin_id = Admin.id WHERE User.Email = :email";
+        $sql = "SELECT User.*, Admin.accessLevel 
+                FROM User 
+                INNER JOIN Admin ON User.id = Admin.User_id 
+                WHERE User.Email = :email";
         $statement = $connection->prepare($sql);
         $statement->bindParam(':email', $email, PDO::PARAM_STR);
         $statement->execute();
@@ -32,6 +35,7 @@ if(isset($_POST['login'])){
     }
 }
 ?>
+
 
 <h1>Admin Login Page</h1>
 <main>
