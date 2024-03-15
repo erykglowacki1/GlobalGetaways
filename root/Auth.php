@@ -89,25 +89,32 @@ try {
 <?php
 // Handle form submission
 if(isset($_POST['submit'])) {
-    $activity_ids = isset($_POST['activity_id']) ? $_POST['activity_id'] : array();
-    $hotel_ids = isset($_POST['hotel_id']) ? $_POST['hotel_id'] : array();
+    if (isset($_POST['activity_id'])) {
+        $activity_ids = $_POST['activity_id'];
+    } else {
+        $activity_ids = array();
+    }
+    if (isset($_POST['hotel_id'])) {
+        $hotel_ids = $_POST['hotel_id'];
+    } else {
+        $hotel_ids = array();
+    }
 
-    // Insert selected activities into Product table
+    // Insert activities into Product table
     foreach($activity_ids as $activity_id) {
-        $sql = "INSERT INTO Product (Activity_id) VALUES (:activity_id)";
+        $sql = "INSERT INTO Product (Destination_id, Activity_id, Hotel_id) VALUES (:destination_id, :activity_id, :hotel_id)";
         $statement = $connection->prepare($sql);
+        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
         $statement->bindParam(':activity_id', $activity_id, PDO::PARAM_INT);
+        if(!empty($hotel_ids)) {
+            // Add the first hotel ID to the statement
+            $statement->bindParam(':hotel_id', $hotel_ids[0], PDO::PARAM_INT);
+        } else {
+            // Set hotel_id to NULL if no hotel is selected
+            $statement->bindValue(':hotel_id', null, PDO::PARAM_NULL);
+        }
         $statement->execute();
     }
 
-    // Insert selected hotels into Product table
-    foreach($hotel_ids as $hotel_id) {
-        $sql = "INSERT INTO Product (Hotel_id) VALUES (:hotel_id)";
-        $statement = $connection->prepare($sql);
-        $statement->bindParam(':hotel_id', $hotel_id, PDO::PARAM_INT);
-        $statement->execute();
-    }
-
-    echo "Selected items added to package.";
 }
 ?>
