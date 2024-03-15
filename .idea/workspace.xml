@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/root/adminLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminLogin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/templates/adminHeader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/adminFiles/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,37 +33,40 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2cvEftv6EBSneGlYfSEUz1zG0t4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "PHP Script.admin.php.executor": "Run",
-    "PHP Script.adminLogin.php.executor": "Debug",
-    "PHP Script.config.php.executor": "Run",
-    "PHP Script.connectionToDB.php.executor": "Run",
-    "PHP Script.deleteActivity.php.executor": "Run",
-    "PHP Script.index.php.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/alexh106/Desktop/Github/GlobalGetaways",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.php.debug.servers",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;PHP Script.admin.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.adminLogin.php.executor&quot;: &quot;Debug&quot;,
+    &quot;PHP Script.config.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.connectionToDB.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.deleteActivity.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.index.php.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alexh106/Desktop/Github/GlobalGetaways&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/GlobalGetaways/root/adminFiles" />
@@ -94,7 +99,8 @@
       <workItem from="1709719510991" duration="9332000" />
       <workItem from="1709889478405" duration="20871000" />
       <workItem from="1710168081456" duration="2027000" />
-      <workItem from="1710502746104" duration="562000" />
+      <workItem from="1710502746104" duration="1037000" />
+      <workItem from="1710503885737" duration="28000" />
     </task>
     <servers />
   </component>
