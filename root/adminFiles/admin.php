@@ -1,5 +1,5 @@
 <?php
-require "../templates/header.php";
+require "../templates/adminHeader.php";
 
 ?>
 
