@@ -4,9 +4,16 @@
  */
 require "../common.php";
 if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+
     try {
         require_once '../connection/connectionToDB.php';
-        $id = $_GET["id"];
+
+        $sqlDeleteRef = "DELETE FROM Product WHERE Hotel_id = :id";
+        $statement = $connection->prepare($sqlDeleteRef);
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+
         $sql = "DELETE FROM Hotel WHERE id = :id";
         $statement = $connection->prepare($sql);
         $statement->bindValue(':id', $id);
@@ -16,6 +23,7 @@ if (isset($_GET["id"])) {
         echo $sql . "<br>" . $error->getMessage();
     }
 }
+
 try {
     require_once '../connection/connectionToDB.php';
     $sql = "SELECT * FROM Hotel";
@@ -28,16 +36,12 @@ try {
 ?>
 
 <head>
-
     <link rel="stylesheet" href="../css/deleteDesign.css">
-
-
 </head>
 
-
 <?php require "../templates/header.php"?>
-<h2>Delete Activities</h2>
-<?php if (!empty($success)) echo $success; ?> <!-- Check if $success is not empty -->
+<h2>Delete Hotels</h2>
+<?php if (!empty($success)) echo $success; ?>
 <table>
     <thead>
     <tr>
@@ -45,7 +49,7 @@ try {
         <th>Hotel Name</th>
         <th>Num of Rooms</th>
         <th>Price</th>
-
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -55,9 +59,7 @@ try {
             <td><?php echo escape($row["HotelName"]); ?></td>
             <td><?php echo escape($row["NumOfRooms"]); ?></td>
             <td><?php echo escape($row["Price"]); ?></td>
-
-            <td><a href="deleteHotel.php?id=<?php echo escape($row["id"]);
-                ?>">Delete</a></td>
+            <td><a href="deleteHotel.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>

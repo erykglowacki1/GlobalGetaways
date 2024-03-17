@@ -1,12 +1,19 @@
 <?php
 /**
- * Delete a user
+ * Delete a flight
  */
 require "../common.php";
 if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+
     try {
         require_once '../connection/connectionToDB.php';
-        $id = $_GET["id"];
+
+        $sqlDeleteRef = "DELETE FROM Product WHERE Destination_id = :id";
+        $statement = $connection->prepare($sqlDeleteRef);
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+
         $sql = "DELETE FROM Destination WHERE id = :id";
         $statement = $connection->prepare($sql);
         $statement->bindValue(':id', $id);
@@ -16,6 +23,7 @@ if (isset($_GET["id"])) {
         echo $sql . "<br>" . $error->getMessage();
     }
 }
+
 try {
     require_once '../connection/connectionToDB.php';
     $sql = "SELECT * FROM Destination";
@@ -29,10 +37,9 @@ try {
 <head>
     <link rel="stylesheet" href="../css/deleteDesign.css">
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 <h2>Delete Cities to fly to</h2>
-<?php if (!empty($success)) echo $success; ?> <!-- Check if $success is not empty -->
+<?php if (!empty($success)) echo $success; ?>
 <table>
     <thead>
     <tr>
@@ -40,6 +47,7 @@ try {
         <th>City</th>
         <th>Price</th>
         <th>Description</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -49,12 +57,12 @@ try {
             <td><?php echo escape($row["City"]); ?></td>
             <td><?php echo escape($row["Price"]); ?></td>
             <td><?php echo escape($row["Description"]); ?></td>
-            <td><a href="deleteFlight.php?id=<?php echo escape($row["id"]);
-                ?>">Delete</a></td>
+            <td><a href="./deleteFlight.php?id=<?php echo escape($row["id"]); ?>">Delete</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
 </table>
-<a href="admin.php">Back to home</a>
+<a href="./admin.php">Back to home</a>
+
 
 
