@@ -2,21 +2,13 @@
 
 class User
 {
-    private $id; //primary key
-    private $userName;
-    private $userEmail;
-    private $useAge;
-    private $userPassword;
-    private $milesId;
+    protected $id;
+    protected $userName;
+    protected $userEmail;
+    protected $useAge;
+    protected $userPassword;
+    protected $milesId;
 
-    /**
-     * @param $id
-     * @param $userName
-     * @param $userEmail
-     * @param $useAge
-     * @param $userPassword
-     * @param $milesId
-     */
     public function __construct($id, $userName, $userEmail, $useAge, $userPassword, $milesId)
     {
         $this->id = $id;
@@ -27,54 +19,34 @@ class User
         $this->milesId = $milesId;
     }
 
-    /**
-     * @return mixed
-     */
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
     public function getUserName()
     {
         return $this->userName;
     }
 
-    /**
-     * @return mixed
-     */
     public function getUserEmail()
     {
         return $this->userEmail;
     }
 
-    /**
-     * @return mixed
-     */
     public function getUseAge()
     {
         return $this->useAge;
     }
 
-    /**
-     * @return mixed
-     */
     public function getUserPassword()
     {
         return $this->userPassword;
     }
 
-    /**
-     * @return mixed
-     */
     public function getMilesId()
     {
         return $this->milesId;
     }
-
-
 }
 ?>

@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/templates/adminHeader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/adminAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/adminFiles/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/adminLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +106,7 @@
       <workItem from="1710168081456" duration="2027000" />
       <workItem from="1710502746104" duration="1037000" />
       <workItem from="1710503885737" duration="28000" />
+      <workItem from="1710702410236" duration="2386000" />
     </task>
     <servers />
   </component>
