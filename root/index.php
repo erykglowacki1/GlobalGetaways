@@ -1,29 +1,15 @@
 <?php
 require "templates/header.php";
 require "common.php";
-
+require_once 'connection/connectionToDB.php';
+require "classes/Destination.php";
 
 $result = [];
 $error_message = "";
 
 if (isset($_POST['search_submit'])) {
-    try {
-
-        require_once 'connection/connectionToDB.php';
-
-        $sql = "SELECT * FROM Destination WHERE City = :City";
-        $City = $_POST['search_place'];
-        $statement = $connection->prepare($sql);
-        $statement->bindParam(':City', $City, PDO::PARAM_STR);
-        $statement->execute();
-        $result = $statement->fetchAll();
-
-        if ($statement->rowCount() == 0) {
-            $error_message = "No results found for " . htmlspecialchars($City) . ".";
-        }
-    } catch (PDOException $error) {
-        $error_message = "An error occurred: " . $error->getMessage();
-    }
+    $search_place = $_POST['search_place'];
+    Destination::searchDestination($search_place, $result, $error_message);
 }
 ?>
 

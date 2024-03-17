@@ -19,36 +19,44 @@ class Destination
 
 
     /**
- * @param $city
- * @param $price
- * @param $description
- */public function __construct($city, $price, $description)
-{
-    $this->city = $city;
-    $this->price = $price;
-    $this->description = $description;
-}/**
- * @return mixed
- */
-public function getCity()
-{
-    return $this->city;
-}/**
- * @return mixed
- */
-public function getPrice()
-{
-    return $this->price;
-}/**
- * @return mixed
- */
-public function getDescription()
-{
-    return $this->description;
-}
+     * @param $city
+     * @param $price
+     * @param $description
+     */
+    public function __construct($city, $price, $description)
+    {
+        $this->city = $city;
+        $this->price = $price;
+        $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 
 
-    public static function getActivitiesByDestinationId($connection, $destination_id) {
+    public static function getActivitiesByDestinationId($connection, $destination_id)
+    {
         $sql = "SELECT * FROM Activity WHERE Destination_id = :destination_id";
         $statement = $connection->prepare($sql);
         $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
@@ -56,7 +64,24 @@ public function getDescription()
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
+   public static function searchDestination($search_place, &$result, &$error_message)
+    {
+        global $connection;
 
+        try {
+            $sql = "SELECT * FROM Destination WHERE City = :City";
+            $statement = $connection->prepare($sql);
+            $statement->bindParam(':City', $search_place, PDO::PARAM_STR);
+            $statement->execute();
+            $result = $statement->fetchAll();
 
+            if ($statement->rowCount() == 0) {
+                $error_message = "No results found for " . htmlspecialchars($search_place) . ".";
+            }
+        } catch (PDOException $error) {
+            $error_message = "An error occurred: " . $error->getMessage();
+        }
+    }
 }
+
 ?>
