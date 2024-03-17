@@ -46,5 +46,13 @@ class Hotel
         return $this->destinationid;
     }
 
+   public static function getHotelsByDestinationId($connection, $destination_id) {
+        $sql = "SELECT * FROM Hotel WHERE Destination_id = :destination_id";
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
 ?>

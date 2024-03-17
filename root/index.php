@@ -1,5 +1,6 @@
 <?php
 require "templates/header.php";
+require "common.php";
 
 
 $result = [];
@@ -7,7 +8,7 @@ $error_message = "";
 
 if (isset($_POST['search_submit'])) {
     try {
-        require "common.php";
+
         require_once 'connection/connectionToDB.php';
 
         $sql = "SELECT * FROM Destination WHERE City = :City";

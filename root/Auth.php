@@ -3,32 +3,34 @@ require "templates/header.php";
 require "classes/Destination.php";
 require "classes/Activity.php";
 require "classes/Hotel.php";
+require "common.php";
+require_once 'connection/connectionToDB.php';
+
 
 try {
-    require "common.php";
-    require_once 'connection/connectionToDB.php';
-
     if(isset($_POST['destination_id'])) {
         $destination_id = $_POST['destination_id'];
 
-        // Query to retrieve activities linked to the specified destination
-        $sql = "SELECT * FROM Activity WHERE Destination_id = :destination_id";
-        $statement = $connection->prepare($sql);
-        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
-        $statement->execute();
-        $activities_result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        // Retrieve activities linked to the specified destination
+        $activities_result = Destination::getActivitiesByDestinationId($connection, $destination_id);
+        // Instantiate Activity objects
+        $activities = [];
+        foreach ($activities_result as $row) {
+            $activities[] = new Activity($row['id'], $row['Equipment'], $row['Price']);
+        }
     } else {
-        // Handle if destination_id is not received
         echo "No destination_id received.";
-        $activities_result = array(); // Empty result
+        $activities = []; // Empty array
     }
 
     if(isset($destination_id)) {
-        $sql = "SELECT * FROM Hotel WHERE Destination_id = :destination_id";
-        $statement = $connection->prepare($sql);
-        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
-        $statement->execute();
-        $hotels_result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $hotels_result = Hotel::getHotelsByDestinationId($connection, $destination_id);
+
+        // Instantiate Hotel objects
+        $hotels = [];
+        foreach ($hotels_result as $row) {
+            $hotels[] = new Hotel($row['id'], $row['HotelName'], $row['NumOfRooms'], $row['Price']);
+        }
     }
 } catch (PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
@@ -114,7 +116,9 @@ if(isset($_POST['submit'])) {
             $statement->bindValue(':hotel_id', null, PDO::PARAM_NULL);
         }
         $statement->execute();
+        echo "items were added to package";
     }
 
 }
 ?>
+<input type="submit" name="book_submit" value="Confirm your booking">
