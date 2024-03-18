@@ -4,10 +4,15 @@ require_once 'connection/connectionToDB.php';
 
 class User {
     private $db;
+    private $id = null;
 
     public function __construct() {
         global $connection;
         $this->db = $connection;
+    }
+
+    public function getId() {
+        return $this->id;
     }
 
     public function register($fullName, $email, $age, $password) {
@@ -21,7 +26,16 @@ class User {
         $stmt->bindParam(2, $email);
         $stmt->bindParam(3, $age);
         $stmt->bindParam(4, $hashedPassword);
-        return $stmt->execute();
+        if ($stmt->execute()) {
+            $this->id = $this->db->lastInsertId();
+            $this->fullName = $fullName;
+            $this->email = $email;
+            $this->age = $age;
+            $this->password = $hashedPassword;
+            // Assume milesId is set elsewhere or later, as it's not part of registration
+            return true;
+        }
+        return false;
     }
 
     public function login($email, $password) {
@@ -34,11 +48,15 @@ class User {
                 session_regenerate_id();
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['FullName'];
+
+                $this->id = $user['id'];
+
                 return true;
             }
         }
         return false;
     }
+
 
     public function emailExists($email) {
         $stmt = $this->db->prepare("SELECT id FROM User WHERE Email = ? LIMIT 1");
@@ -47,4 +65,3 @@ class User {
         return $stmt->fetch(PDO::FETCH_ASSOC) ? true : false;
     }
 }
-?>

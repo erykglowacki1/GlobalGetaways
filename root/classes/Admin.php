@@ -5,14 +5,24 @@ class Admin extends User
 {
     private $accessLevel;
 
-    public function __construct($id, $userName, $userEmail, $useAge, $userPassword, $milesId, $accessLevel) {
-        parent::__construct($id, $userName, $userEmail, $useAge, $userPassword, $milesId);
+    public function setAccessLevel($accessLevel)
+    {
         $this->accessLevel = $accessLevel;
     }
 
     public function getAccessLevel()
     {
         return $this->accessLevel;
+    }
+
+    public function login($email, $password) {
+        $loginSuccess = parent::login($email, $password);
+        if ($loginSuccess) {
+            $this->setAccessLevel(1);
+
+            return true;
+        }
+        return false;
     }
 }
 ?>
