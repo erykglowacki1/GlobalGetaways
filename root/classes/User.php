@@ -1,52 +1,50 @@
 <?php
 
-class User
-{
-    protected $id;
-    protected $userName;
-    protected $userEmail;
-    protected $useAge;
-    protected $userPassword;
-    protected $milesId;
+require_once 'connection/connectionToDB.php';
 
-    public function __construct($id, $userName, $userEmail, $useAge, $userPassword, $milesId)
-    {
-        $this->id = $id;
-        $this->userName = $userName;
-        $this->userEmail = $userEmail;
-        $this->useAge = $useAge;
-        $this->userPassword = $userPassword;
-        $this->milesId = $milesId;
+class User {
+    private $db;
+
+    public function __construct() {
+        global $connection;
+        $this->db = $connection;
     }
 
-    public function getId()
-    {
-        return $this->id;
+    public function register($fullName, $email, $age, $password) {
+        if ($this->emailExists($email)) {
+            return false;
+        }
+
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $this->db->prepare("INSERT INTO User (FullName, Email, Age, Password) VALUES (?, ?, ?, ?)");
+        $stmt->bindParam(1, $fullName);
+        $stmt->bindParam(2, $email);
+        $stmt->bindParam(3, $age);
+        $stmt->bindParam(4, $hashedPassword);
+        return $stmt->execute();
     }
 
-    public function getUserName()
-    {
-        return $this->userName;
+    public function login($email, $password) {
+        $stmt = $this->db->prepare("SELECT * FROM User WHERE Email = ? LIMIT 1");
+        $stmt->bindParam(1, $email);
+        $stmt->execute();
+
+        if ($user = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            if (password_verify($password, $user['Password'])) {
+                session_regenerate_id();
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_name'] = $user['FullName'];
+                return true;
+            }
+        }
+        return false;
     }
 
-    public function getUserEmail()
-    {
-        return $this->userEmail;
-    }
-
-    public function getUseAge()
-    {
-        return $this->useAge;
-    }
-
-    public function getUserPassword()
-    {
-        return $this->userPassword;
-    }
-
-    public function getMilesId()
-    {
-        return $this->milesId;
+    public function emailExists($email) {
+        $stmt = $this->db->prepare("SELECT id FROM User WHERE Email = ? LIMIT 1");
+        $stmt->bindParam(1, $email);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC) ? true : false;
     }
 }
 ?>
