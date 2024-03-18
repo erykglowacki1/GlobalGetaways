@@ -8,8 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlobalGetaways.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/adminFiles/deleteActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/adminFiles/deleteActivity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Reservation.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/root/classes/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/adminAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/adminAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +111,9 @@
       <workItem from="1710702410236" duration="4282000" />
       <workItem from="1710783909840" duration="663000" />
       <workItem from="1710784575212" duration="1870000" />
-      <workItem from="1710787068459" duration="942000" />
+      <workItem from="1710787068459" duration="994000" />
+      <workItem from="1710788308044" duration="742000" />
+      <workItem from="1710789600916" duration="516000" />
     </task>
     <servers />
   </component>

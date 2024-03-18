@@ -17,22 +17,9 @@ class adminAuthenticator {
         if ($user && $password === $user['Password']) {
             if ($user['accessLevel'] == 1) {
                 return new Admin(
-                    $user['id'],
-                    $user['FullName'],
-                    $user['Email'],
-                    $user['Age'],
-                    $user['Password'],
-                    null,
-                    $user['accessLevel']
                 );
             } else {
                 return new User(
-                    $user['id'],
-                    $user['FullName'],
-                    $user['Email'],
-                    $user['Age'],
-                    $user['Password'],
-                    null
                 );
             }
         } else {

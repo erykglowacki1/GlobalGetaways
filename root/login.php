@@ -10,10 +10,12 @@ if (isset($_POST['register'])) {
     $age = $_POST['age'];
     $password = $_POST['password'];
 
+    $user->setDetails($fullName, $email, $age, $password);
+
     if($user->emailExists($email)) {
         echo "Email already exists!";
     }
-    else if($user->register($fullName, $email, $age, $password)) {
+    else if($user->register()) {
         echo "Registration successful!";
     } else {
         echo "Registration failed!";
