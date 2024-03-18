@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 15, 2024 at 11:36 AM
+-- Generation Time: Mar 18, 2024 at 09:17 PM
 -- Server version: 5.7.39
 -- PHP Version: 8.2.0
 
@@ -41,8 +41,11 @@ CREATE TABLE `Activity` (
 --
 
 INSERT INTO `Activity` (`id`, `Equipment`, `Price`, `Destination_id`) VALUES
-(11, 'Cycling Trip', 12, NULL),
-(12, 'Ski', 12, 12);
+(14, 'Museum Tour', 200, 14),
+(15, 'Cycling Trip', 300, 15),
+(16, 'Helicopter flight around New York', 200, 16),
+(17, 'JR Pass to travel to whatever city you like', 500, 17),
+(18, 'Guided Tour to see Jesus Christ Sculpture', 300, 18);
 
 -- --------------------------------------------------------
 
@@ -55,6 +58,13 @@ CREATE TABLE `Admin` (
   `accessLevel` int(11) DEFAULT NULL,
   `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Admin`
+--
+
+INSERT INTO `Admin` (`id`, `accessLevel`, `User_id`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -74,7 +84,11 @@ CREATE TABLE `Destination` (
 --
 
 INSERT INTO `Destination` (`id`, `City`, `Price`, `Description`) VALUES
-(12, 'London', 11, 'hasdfuhasiodhasod;oaishdioas');
+(14, 'London', 2000, '7 Day trip to the capital of England'),
+(15, 'Amsterdam', 2500, 'Trip to Amsterdam'),
+(16, 'New York', 3000, '10 Day Trip to The City that never sleeps'),
+(17, 'Japan', 4000, '14 day trip to Tokyo '),
+(18, 'Rio De Janeiro', 3500, '7 Day trip to Brazil');
 
 -- --------------------------------------------------------
 
@@ -95,8 +109,11 @@ CREATE TABLE `Hotel` (
 --
 
 INSERT INTO `Hotel` (`id`, `HotelName`, `NumOfRooms`, `Price`, `Destination_id`) VALUES
-(5, 'Ritz Carlton', 1, 1, NULL),
-(6, '4 star', 3, 3, 12);
+(8, 'Ritz Carlton', 10, 200, 14),
+(9, 'Ritz Carlton', 3, 350, 15),
+(10, 'Hilton', 5, 500, 16),
+(11, 'Hilton Tokyo', 6, 540, 17),
+(12, 'Royal Rio Palace', 6, 500, 18);
 
 -- --------------------------------------------------------
 
@@ -110,6 +127,13 @@ CREATE TABLE `Miles` (
   `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `Miles`
+--
+
+INSERT INTO `Miles` (`id`, `PointsNum`, `User_id`) VALUES
+(1, '0', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -119,7 +143,6 @@ CREATE TABLE `Miles` (
 CREATE TABLE `Payment` (
   `id` int(11) NOT NULL,
   `CardNum` int(11) NOT NULL,
-  `Reservation_id` int(11) NOT NULL,
   `userName` varchar(255) NOT NULL,
   `Product_id` int(11) NOT NULL,
   `User_id` int(11) NOT NULL
@@ -138,14 +161,6 @@ CREATE TABLE `Product` (
   `Destination_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `Product`
---
-
-INSERT INTO `Product` (`id`, `Hotel_id`, `Activity_id`, `Destination_id`) VALUES
-(22, NULL, 12, NULL),
-(23, 6, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -159,6 +174,13 @@ CREATE TABLE `User` (
   `Age` varchar(45) NOT NULL,
   `Password` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `User`
+--
+
+INSERT INTO `User` (`id`, `FullName`, `Email`, `Age`, `Password`) VALUES
+(1, 'Admin', 'admin@globalG.com', '30', 'admin$$$');
 
 --
 -- Indexes for dumped tables
@@ -202,7 +224,7 @@ ALTER TABLE `Miles`
 -- Indexes for table `Payment`
 --
 ALTER TABLE `Payment`
-  ADD PRIMARY KEY (`id`,`Reservation_id`,`Product_id`,`User_id`),
+  ADD PRIMARY KEY (`id`,`Product_id`,`User_id`),
   ADD KEY `fk_Payment_Product1_idx` (`Product_id`),
   ADD KEY `fk_Payment_User1_idx` (`User_id`);
 
@@ -229,19 +251,19 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Activity`
 --
 ALTER TABLE `Activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `Destination`
 --
 ALTER TABLE `Destination`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `Hotel`
 --
 ALTER TABLE `Hotel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `Payment`
@@ -253,7 +275,7 @@ ALTER TABLE `Payment`
 -- AUTO_INCREMENT for table `Product`
 --
 ALTER TABLE `Product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Constraints for dumped tables
@@ -281,14 +303,14 @@ ALTER TABLE `Hotel`
 -- Constraints for table `Miles`
 --
 ALTER TABLE `Miles`
-  ADD CONSTRAINT `fk_Miles_User1` FOREIGN KEY (`User_id`) REFERENCES `User` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Miles_User1` FOREIGN KEY (`User_id`) REFERENCES `User` (`id`);
 
 --
 -- Constraints for table `Payment`
 --
 ALTER TABLE `Payment`
   ADD CONSTRAINT `fk_Payment_Product1` FOREIGN KEY (`Product_id`) REFERENCES `Product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Payment_User1` FOREIGN KEY (`User_id`) REFERENCES `User` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Payment_User1` FOREIGN KEY (`User_id`) REFERENCES `User` (`id`);
 
 --
 -- Constraints for table `Product`
