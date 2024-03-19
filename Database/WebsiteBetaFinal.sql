@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 18, 2024 at 09:17 PM
+-- Generation Time: Mar 19, 2024 at 12:16 AM
 -- Server version: 5.7.39
 -- PHP Version: 8.2.0
 
@@ -172,7 +172,7 @@ CREATE TABLE `User` (
   `FullName` varchar(45) NOT NULL,
   `Email` varchar(45) NOT NULL,
   `Age` varchar(45) NOT NULL,
-  `Password` varchar(45) NOT NULL
+  `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -278,6 +278,12 @@ ALTER TABLE `Product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
+-- AUTO_INCREMENT for table `User`
+--
+ALTER TABLE `User`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -291,7 +297,7 @@ ALTER TABLE `Activity`
 -- Constraints for table `Admin`
 --
 ALTER TABLE `Admin`
-  ADD CONSTRAINT `fk_Admin_User1` FOREIGN KEY (`User_id`) REFERENCES `User` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Admin_User1` FOREIGN KEY (`User_id`) REFERENCES `User` (`id`);
 
 --
 -- Constraints for table `Hotel`
