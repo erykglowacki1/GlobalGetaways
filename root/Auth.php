@@ -13,7 +13,7 @@ try {
 
         // Retrieve activities linked to the specified destination
         $activities_result = Destination::getActivitiesByDestinationId($connection, $destination_id);
-        // Instantiate Activity objects
+        //Activity objects
         $activities = [];
         foreach ($activities_result as $row) {
             $activities[] = new Activity($row['id'], $row['Equipment'], $row['Price']);
@@ -26,7 +26,7 @@ try {
     if(isset($destination_id)) {
         $hotels_result = Hotel::getHotelsByDestinationId($connection, $destination_id);
 
-        // Instantiate Hotel objects
+        // Hotel objects
         $hotels = [];
         foreach ($hotels_result as $row) {
             $hotels[] = new Hotel($row['id'], $row['HotelName'], $row['NumOfRooms'], $row['Price']);

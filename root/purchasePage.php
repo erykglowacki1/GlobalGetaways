@@ -23,8 +23,8 @@ if (isset($_GET['product_id'])) {
     <label for="expirationDate">Expiration Date</label>
     <input type="date" name="expirationDate" id="expirationDate">
 
-    <label for="userName">CardHolders Name</label>
-    <input type="text" name="userName" id="userName">
+    <label for="ownerName">CardHolders Name</label>
+    <input type="text" name="ownerName" id="ownerName">
 
     <label for="cvv">CVV</label>
     <input type="number" name="cvv" id="cvv">

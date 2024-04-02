@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -23,13 +24,14 @@ if (isset($_POST['register'])) {
 }
 
 if (isset($_POST['login'])) {
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     if ($user->login($email, $password)) {
         echo "Login successful!";
 
-        header('Location: index.php');
+        header('Location:index.php');
     } else {
         echo "Invalid email or password.";
     }
