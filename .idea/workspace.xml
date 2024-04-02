@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/css/destinationPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/destinations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/purchasePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/purchasePage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/templates/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +114,7 @@
       <workItem from="1710798740155" duration="283000" />
       <workItem from="1710926990289" duration="9211000" />
       <workItem from="1711471818589" duration="8545000" />
-      <workItem from="1711739237960" duration="6323000" />
+      <workItem from="1711739237960" duration="6956000" />
     </task>
     <servers />
   </component>
