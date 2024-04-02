@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/connection/session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/destinations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/templates/adminHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/templates/adminHeader.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/templates/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +120,7 @@
       <workItem from="1710798740155" duration="283000" />
       <workItem from="1710926990289" duration="9211000" />
       <workItem from="1711471818589" duration="8545000" />
-      <workItem from="1711739237960" duration="6956000" />
+      <workItem from="1711739237960" duration="13270000" />
     </task>
     <servers />
   </component>

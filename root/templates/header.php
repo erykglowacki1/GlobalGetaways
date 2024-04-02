@@ -1,4 +1,10 @@
+<?php session_start();
+if ($_SESSION['Active'] == false){
+    header("location:login.php");
+    exit;
+}
 
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -19,9 +25,7 @@
         <div class="global-getaways">
             <h1>Global Getaways</h1>
         </div>
-        <div class="admin-button">
-            <a href="adminLogin.php"><button>Login</button></a>
-        </div>
+
         <div class="login-button">
             <a href="login.php"><button>Login</button></a>
         </div>
@@ -42,4 +46,8 @@
             <div class="line3"></div>
         </div>
     </nav>
+
+    <form action="logout.php" method="post" name="Logout_Form" class="form-signin">
+        <button name="Submit" value="Logout" class="button" type="submit">Log out</button>
+    </form>
 </header>

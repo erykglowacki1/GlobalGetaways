@@ -1,3 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Global Getaways</title>
+</head>
+<body>
+<header>
+    <div class="title-bar">
+        <div class="global-getaways">
+            <h1>Global Getaways</h1>
+        </div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><i class="fa-solid fa-house"></i><a href="index.php">Home</a></li>
+            <li><i class="fa-solid fa-location-dot"></i><a href="destinations.php">Destinations</a></li>
+            <li><i class="fa-solid fa-phone"></i><a href="contact.php">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
+
+<body>
+<main>
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" name="login" value="Login">
+        </form>
+        <button onclick="toggleForms()">Don't have an account? Click here to register</button>
+    </div>
+    <div class="admin-button">
+        <a href="adminLogin.php"><button>Admin Login</button></a>
+    </div>
+    <div id="registerForm" style="display: none;">
+        <h2>Register</h2>
+        <form method="post">
+            <input type="text" name="fullName" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" name="register" value="Register">
+        </form>
+        <button onclick="toggleForms()">Already have an account? Click here to login</button>
+    </div>
+</main>
+
+<script>
+    function toggleForms() {
+        var loginForm = document.getElementById('loginForm');
+        var registerForm = document.getElementById('registerForm');
+        var isLoginVisible = loginForm.style.display === 'block';
+
+        loginForm.style.display = isLoginVisible ? 'none' : 'block';
+        registerForm.style.display = isLoginVisible ? 'block' : 'none';
+    }
+</script>
+</body>
+</html>
 
 <?php
 session_start();
@@ -31,54 +102,9 @@ if (isset($_POST['login'])) {
     if ($user->login($email, $password)) {
         echo "Login successful!";
 
-        header('Location:index.php');
+        header('location:index.php');
     } else {
         echo "Invalid email or password.";
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login and Registration</title>
-    <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
-<main>
-    <div id="loginForm">
-        <h2>Login</h2>
-        <form method="post">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" name="login" value="Login">
-        </form>
-        <button onclick="toggleForms()">Don't have an account? Click here to register</button>
-    </div>
-
-    <div id="registerForm" style="display: none;">
-        <h2>Register</h2>
-        <form method="post">
-            <input type="text" name="fullName" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="number" name="age" placeholder="Age" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" name="register" value="Register">
-        </form>
-        <button onclick="toggleForms()">Already have an account? Click here to login</button>
-    </div>
-</main>
-
-<script>
-    function toggleForms() {
-        var loginForm = document.getElementById('loginForm');
-        var registerForm = document.getElementById('registerForm');
-        var isLoginVisible = loginForm.style.display === 'block';
-
-        loginForm.style.display = isLoginVisible ? 'none' : 'block';
-        registerForm.style.display = isLoginVisible ? 'block' : 'none';
-    }
-</script>
-</body>
-</html>

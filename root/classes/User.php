@@ -49,7 +49,7 @@ class User {
                 session_regenerate_id();
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['FullName'];
-
+                $_SESSION['Active'] = true;
                 $this->id = $user['id'];
 
                 return true;
