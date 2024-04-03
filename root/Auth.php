@@ -117,6 +117,18 @@ if(isset($_POST['submit'])) {
         }
         $statement->execute();
         echo "items were added to package";
+
+
+        //Got this line from stackoverflow
+        //https://stackoverflow.com/questions/10680943/pdo-get-the-last-id-inserted
+        $product_id = $connection->lastInsertId();
+
+        // Store product ID in session
+        $_SESSION['product_id'] = $product_id;
+
+        // Redirect to payment page
+        header("Location: purchasePage.php");
+        exit();
     }
 
 }

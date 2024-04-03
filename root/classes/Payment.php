@@ -6,27 +6,48 @@ class Payment
     private $cardNum;
     private $ownerName;
 
-    private $reservationid;
+    private $user_id;
+    private $product_id;
 
     /**
      * @param $cardNum
      * @param $ownerName
-     * @param $reservationid
+     * @param $user_id
+     * @param $product_id
      */
-    public function __construct($cardNum, $ownerName, $reservationid)
+    public function __construct($cardNum, $ownerName, $user_id, $product_id)
     {
         $this->cardNum = $cardNum;
         $this->ownerName = $ownerName;
-        $this->reservationid = $reservationid;
+        $this->user_id = $user_id;
+        $this->product_id = $product_id;
     }
 
     /**
      * @return mixed
      */
-    public function getReservationid()
+    public function getUserId()
     {
-        return $this->reservationid;
+        return $this->user_id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getProductId()
+    {
+        return $this->product_id;
+    }
+
+
+
+    /**
+     * @param $cardNum
+     * @param $ownerName
+
+     */
+
+
 
 
     /**

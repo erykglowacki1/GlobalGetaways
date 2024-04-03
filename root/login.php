@@ -18,9 +18,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <ul class="nav-links">
-            <li><i class="fa-solid fa-house"></i><a href="index.php">Home</a></li>
             <li><i class="fa-solid fa-location-dot"></i><a href="destinations.php">Destinations</a></li>
-            <li><i class="fa-solid fa-phone"></i><a href="contact.php">Contact</a></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -101,6 +99,9 @@ if (isset($_POST['login'])) {
 
     if ($user->login($email, $password)) {
         echo "Login successful!";
+
+        $_SESSION['user_id'] = $user->getId(); // Assuming getId() returns the user ID
+
 
         header('location:index.php');
     } else {

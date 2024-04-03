@@ -4,7 +4,7 @@ require_once 'connection/connectionToDB.php';
 
 class User {
     private $db;
-    private $id = null;
+    private $id;
     private $fullName;
     private $email;
     private $age;

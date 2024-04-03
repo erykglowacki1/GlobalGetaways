@@ -14,13 +14,15 @@ if (isset($_POST['search_submit'])) {
 ?>
 
 
+
+
 <head>
     <link rel="stylesheet" href="css/Results.css">
     <title>Search</title>
 
 </head>
 <h1>Status: You are logged in <?php echo
-    $_SESSION['user_name'];  ?> :  </h1>
+    $_SESSION['user_name']; ?> : </h1>
 <body>
 <h2 style="text-align: center;">Search for Destinations</h2>
 <form class="search-bar" method="post">
