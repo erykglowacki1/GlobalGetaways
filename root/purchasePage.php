@@ -2,6 +2,10 @@
 require 'templates/header.php';
 require_once "classes/Payment.php";
 require "classes/Destination.php";
+require "classes/Activity.php";
+require "classes/Hotel.php";
+
+
 
 
 
@@ -22,7 +26,10 @@ if (isset($_SESSION['user_id'])) {
     echo "User ID not found in session.";
 }
 
+
+
 ?>
+
 
 <?php
 
@@ -65,6 +72,7 @@ if (isset($_POST['submit'])) {
 <head>
     <link rel="stylesheet" href="css/payment.css">
 </head>
+
 <form method="post">
 
     <label for="cardNum">Card Number</label>

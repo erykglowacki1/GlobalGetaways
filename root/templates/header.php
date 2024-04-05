@@ -27,9 +27,10 @@ if ($_SESSION['Active'] == false){
         </div>
 
         <div class="login-button">
-            <a href="login.php"><button>Login</button></a>
+        <form action="logout.php" method="post" name="Logout_Form" class="form-signin">
+            <button name="Submit" value="Logout" class="button" type="submit">Log out</button>
+        </form>
         </div>
-
     </div>
 
     <!-- Navigation Bar -->
@@ -47,7 +48,5 @@ if ($_SESSION['Active'] == false){
         </div>
     </nav>
 
-    <form action="logout.php" method="post" name="Logout_Form" class="form-signin">
-        <button name="Submit" value="Logout" class="button" type="submit">Log out</button>
-    </form>
+
 </header>

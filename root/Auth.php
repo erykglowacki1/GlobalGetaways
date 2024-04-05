@@ -38,6 +38,7 @@ try {
 ?>
 
 <h2>Add an Activity</h2>
+<h2>Current Total Price : </h2>
 <form method="post" action="">
     <table>
         <thead>

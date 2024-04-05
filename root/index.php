@@ -13,15 +13,12 @@ if (isset($_POST['search_submit'])) {
 }
 ?>
 
-
-
-
 <head>
     <link rel="stylesheet" href="css/Results.css">
     <title>Search</title>
 
 </head>
-<h1>Status: You are logged in <?php echo
+<h1>Logged in <?php echo
     $_SESSION['user_name']; ?> : </h1>
 <body>
 <h2 style="text-align: center;">Search for Destinations</h2>
@@ -58,6 +55,7 @@ if (isset($_POST['search_submit'])) {
                 <td><?php echo escape($row["City"]); ?></td>
                 <td><?php echo escape($row["Description"]); ?></td>
                 <td><?php echo escape($row["Price"]); ?></td>
+
                 <td>
 
                     <form action="Auth.php" method="post">
