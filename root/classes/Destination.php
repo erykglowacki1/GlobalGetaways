@@ -55,14 +55,7 @@ class Destination
     }
 
 
-    public static function getActivitiesByDestinationId($connection, $destination_id)
-    {
-        $sql = "SELECT * FROM Activity WHERE Destination_id = :destination_id";
-        $statement = $connection->prepare($sql);
-        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
-        $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
-    }
+
 
    public static function searchDestination($search_place, &$result, &$error_message)
     {

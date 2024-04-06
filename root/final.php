@@ -11,8 +11,8 @@ require "connection/config.php";
 require "classes/finalSummary.php";
 
 // Check if the product ID is set in the session
-$summaryMethod = new finalSummary($connection);
-$summaryMethod->displayBookingInformation();
+finalSummary::displayBookingInformation();
+
 
 ?>
 </body>
