@@ -4,6 +4,7 @@ require "common.php";
 require_once 'connection/connectionToDB.php';
 require "classes/Destination.php";
 
+
 $result = [];
 $error_message = "";
 

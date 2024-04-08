@@ -21,16 +21,16 @@ if (isset($_POST['submit'])) {
         $city = $destination->getCity();
         $statement->bindParam(':city', $city);
         $price = $destination->getPrice();
-        $statement->bindParam(':price',$price);
+        $statement->bindParam(':price', $price);
         $description = $destination->getDescription();
-        $statement->bindParam(':description',$description);
+        $statement->bindParam(':description', $description);
 
 
         $statement->execute();
 
         echo $city . ' successfully added';
 
-    } catch(PDOException $error) {
+    } catch (PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
 }
