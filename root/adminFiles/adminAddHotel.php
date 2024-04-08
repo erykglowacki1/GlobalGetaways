@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-require "../templates/header.php";
+
 ?>
 
 <head>

@@ -4,14 +4,17 @@ class finalSummary
     public static function displayBookingInformation() {
         global $connection;
 
+
         if(isset($_SESSION['product_id'])) {
             try {
+                //https://www.w3schools.com/sql/func_sqlserver_coalesce.asp
                 $sql = "SELECT 
                             User.FullName,
                             Destination.City AS Destination,
-                            Activity.Equipment AS SelectedActivity,
-                            Hotel.HotelName AS SelectedHotel,
-                            (Activity.Price + Destination.Price + Hotel.Price) AS TotalPrice
+                            
+                            COALESCE(Activity.Equipment, 'None') AS SelectedActivity,
+                            COALESCE(Hotel.HotelName, 'None') AS SelectedHotel,
+                            (COALESCE(Activity.Price, 0) + Destination.Price + COALESCE(Hotel.Price, 0)) AS TotalPrice
                         FROM 
                             User
                         JOIN 
@@ -49,3 +52,4 @@ class finalSummary
         }
     }
 }
+?>

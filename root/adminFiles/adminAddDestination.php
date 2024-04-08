@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-require "../templates/header.php";
+
 ?>
 <head>
     <link rel="stylesheet" href="../css/addDesign.css">

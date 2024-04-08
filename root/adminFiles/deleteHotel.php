@@ -39,7 +39,7 @@ try {
     <link rel="stylesheet" href="../css/deleteDesign.css">
 </head>
 
-<?php require "../templates/header.php"?>
+
 <h2>Delete Hotels</h2>
 <?php if (!empty($success)) echo $success; ?>
 <table>

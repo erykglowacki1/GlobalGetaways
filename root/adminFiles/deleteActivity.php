@@ -41,7 +41,7 @@ try {
 </head>
 <body>
 
-<?php require "../templates/header.php"?>
+
 <h2>Delete Activities</h2>
 <?php if (!empty($success)) echo $success; ?>
 
