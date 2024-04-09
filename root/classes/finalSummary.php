@@ -1,17 +1,16 @@
 <?php
+session_start();
+
 class finalSummary
 {
     public static function displayBookingInformation() {
         global $connection;
 
-
         if(isset($_SESSION['product_id'])) {
             try {
-                //https://www.w3schools.com/sql/func_sqlserver_coalesce.asp
                 $sql = "SELECT 
                             User.FullName,
                             Destination.City AS Destination,
-                            
                             COALESCE(Activity.Equipment, 'None') AS SelectedActivity,
                             COALESCE(Hotel.HotelName, 'None') AS SelectedHotel,
                             (COALESCE(Activity.Price, 0) + Destination.Price + COALESCE(Hotel.Price, 0)) AS TotalPrice
@@ -36,19 +35,39 @@ class finalSummary
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 if($row) {
-                    echo "Full Name: " . $row['FullName'] . "<br>";
-                    echo "Destination: " . $row['Destination'] . "<br>";
-                    echo "Selected Activity: " . $row['SelectedActivity'] . "<br>";
-                    echo "Selected Hotel: " . $row['SelectedHotel'] . "<br>";
-                    echo "Total Price: $" . $row['TotalPrice'] . "<br><br>";
+                    $originalTotalPrice = $row['TotalPrice']; // Store the original total price
+                    $useMileagePoints = isset($_SESSION['useMileagePoints']) && $_SESSION['useMileagePoints'];
+                    $mileagePointsDiscount = 0;
+
+                    if ($useMileagePoints) {
+                        // Calculate the mileage points and discount
+                        $percentage = rand(5, 10) / 100;
+                        $mileagePointsValue = $originalTotalPrice * $percentage;
+                        $mileagePointsDiscount = min($originalTotalPrice, $mileagePointsValue);
+                    }
+
+                    $finalTotalPrice = $originalTotalPrice - $mileagePointsDiscount; // Calculate final price after discount
+
+                    echo "<p><span>Full Name:</span> " . htmlspecialchars($row['FullName']) . "</p>";
+                    echo "<p><span>Destination:</span> " . htmlspecialchars($row['Destination']) . "</p>";
+                    echo "<p><span>Selected Activity:</span> " . htmlspecialchars($row['SelectedActivity']) . "</p>";
+                    echo "<p><span>Selected Hotel:</span> " . htmlspecialchars($row['SelectedHotel']) . "</p>";
+                    echo "<p><span>Total Price:</span> €" . number_format($originalTotalPrice, 2) . "</p>";
+
+                    if ($useMileagePoints) {
+                        echo "<p><span>Mileage Points Used:</span> " . number_format($mileagePointsDiscount / 0.50, 0) . "</p>";
+                        echo "<p><span>Mileage Points Discount:</span> €" . number_format($mileagePointsDiscount, 2) . "</p>";
+                    }
+
+                    echo "<p><span>Total Amount after Discount:</span> €" . number_format($finalTotalPrice, 2) . "</p>";
                 } else {
-                    echo "No transaction found for the current session.";
+                    echo "<p>No transaction found for the current session.</p>";
                 }
             } catch (PDOException $error) {
-                echo "An error occurred: " . $error->getMessage();
+                echo "<p>An error occurred: " . $error->getMessage() . "</p>";
             }
         } else {
-            echo "No transaction found for the current session.";
+            echo "<p>No transaction found for the current session.</p>";
         }
     }
 }

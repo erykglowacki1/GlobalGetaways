@@ -23,57 +23,59 @@ try {
 }
 ?>
 
-<h2>Add an Activity</h2>
-<h2>Current Total Price : </h2>
-<form method="post" action="">
-    <table>
-        <thead>
-        <tr>
-            <th>Activity Type</th>
-            <th>Price</th>
-            <th>Add to package</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($activities_result as $row) : ?>
+<div class="form-container">
+    <h2>Add an Activity</h2>
+    <h2>Current Total Price :</h2>
+    <form method="post" action="">
+        <table class="activities-table">
+            <thead>
             <tr>
-                <td><?php echo escape($row["Equipment"]); ?></td>
-                <td><?php echo escape($row["Price"]); ?></td>
-                <td>
-                    <input type="checkbox" name="activity_id[]" value="<?php echo $row['id']; ?>">
-                </td>
+                <th>Activity Type</th>
+                <th>Price</th>
+                <th>Add to package</th>
             </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <?php foreach ($activities_result as $row) : ?>
+                <tr>
+                    <td><?php echo escape($row["Equipment"]); ?></td>
+                    <td><?php echo escape($row["Price"]); ?></td>
+                    <td>
+                        <input type="checkbox" name="activity_id[]" value="<?php echo $row['id']; ?>">
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
 
-    <h2>Add a Hotel</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>Hotel Name</th>
-            <th>Number of rooms needed</th>
-            <th>Price</th>
-            <th>Add to package</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($hotels_result as $row) : ?>
+        <h2>Add a Hotel</h2>
+        <table class="hotels-table">
+            <thead>
             <tr>
-                <td><?php echo escape($row["HotelName"]); ?></td>
-                <td><?php echo escape($row["NumOfRooms"]); ?></td>
-                <td><?php echo escape($row["Price"]); ?></td>
-                <td>
-                    <input type="checkbox" name="hotel_id[]" value="<?php echo $row['id']; ?>">
-                </td>
+                <th>Hotel Name</th>
+                <th>Number of rooms needed</th>
+                <th>Price</th>
+                <th>Add to package</th>
             </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <?php foreach ($hotels_result as $row) : ?>
+                <tr>
+                    <td><?php echo escape($row["HotelName"]); ?></td>
+                    <td><?php echo escape($row["NumOfRooms"]); ?></td>
+                    <td><?php echo escape($row["Price"]); ?></td>
+                    <td>
+                        <input type="checkbox" name="hotel_id[]" value="<?php echo $row['id']; ?>">
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
 
-    <input type="hidden" name="destination_id" value="<?php echo $destination_id; ?>">
-    <input type="submit" name="submit" value="Add Selected to Package">
-</form>
+        <input type="hidden" name="destination_id" value="<?php echo $destination_id; ?>">
+        <input type="submit" name="submit" value="Add Selected to Package">
+    </form>
+</div>
 
 <?php
 // Handle form submission
@@ -110,4 +112,4 @@ if(isset($_POST['submit'])) {
     exit();
 }
 ?>
-<input type="submit" name="book_submit" value="Confirm your booking">
+

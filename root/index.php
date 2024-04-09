@@ -22,22 +22,34 @@ if (isset($_POST['search_submit'])) {
 <h1>Logged in <?php echo
     $_SESSION['user_name']; ?> : </h1>
 <body>
-<h2 style="text-align: center;">Search for Destinations</h2>
-<form class="search-bar" method="post">
-    <label for="search-place">Place:</label>
-    <input type="text" id="search-place" name="search_place" required>
+<div class="search-form-container">
+    <h2 style="text-align: center;">Search for Destinations</h2>
+    <form class="search-bar" method="post">
+        <div class="form-field">
+            <label for="search-place">Place:</label>
+            <input type="text" id="search-place" name="search_place" required>
+        </div>
 
-    <label for="search-dates">Dates:</label>
-    <input type="date" id="search-dates" name="search_dates" required>
+        <div class="form-field">
+            <label for="search-dates">Dates:</label>
+            <input type="date" id="search-dates" name="search_dates" required>
+        </div>
 
-    <label for="search-people">Number of People:</label>
-    <select id="search-people" name="search_people" required>
-        <?php for ($i = 1; $i <= 10; $i++) { ?>
-            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-        <?php } ?>
-    </select>
-    <input type="submit" name="search_submit" value="Search">
-</form>
+        <div class="form-field">
+            <label for="search-people">Number of People:</label>
+            <select id="search-people" name="search_people" required>
+                <?php for ($i = 1; $i <= 10; $i++) { ?>
+                    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+
+        <div class="submit-container">
+            <input type="submit" name="search_submit" value="Search">
+        </div>
+    </form>
+</div>
+
 
 <?php if (!empty($result)): ?>
     <h2>Best Flight Found</h2>

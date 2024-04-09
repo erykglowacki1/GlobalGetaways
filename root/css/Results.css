@@ -1,46 +1,64 @@
+.search-form-container .form-field {
+    margin-bottom: 15px;
+}
 
-table {
+.search-form-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.search-form-container input[type="text"],
+.search-form-container input[type="date"],
+.search-form-container select {
     width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-th, td {
     padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-thead {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-tbody tr:hover {
-    background-color: #f5f5f5;
-}
-
-th {
-    height: 50px;
-}
-
-td {
-    height: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 
-input[type="submit"] {
+.search-form-container .submit-container input[type="submit"] {
     background-color: #183ccb;
     color: white;
     padding: 10px 20px;
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
     display: inline-block;
     margin: 4px 2px;
     border-radius: 5px;
     transition: background 0.3s ease;
 }
 
-input[type="submit"]:hover {
+.search-form-container .submit-container input[type="submit"]:hover {
     background-color: #7871de;
+}
+
+.search-form-container table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.search-form-container th, .search-form-container td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-form-container thead {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.search-form-container tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.search-form-container th {
+    height: 50px;
+}
+
+.search-form-container td {
+    height: 40px;
 }

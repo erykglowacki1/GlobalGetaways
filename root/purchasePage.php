@@ -33,12 +33,20 @@ if (isset($_SESSION['user_id'])) {
 
 <?php
 
+session_start();
+
+
 if (isset($_POST['submit'])) {
+
     require "common.php";
     try {
         require_once 'connection/connectionToDB.php';
 
-        // Create an instance of Payment
+        // Assuming user and product IDs are already stored in the session
+        $product_id = $_SESSION['product_id'];
+        $user_id = $_SESSION['user_id'];
+
+        // Create an instance of Payment with form data
         $payment = new Payment(
             $_POST['CardNum'],
             $_POST['ownerName'],
@@ -46,27 +54,26 @@ if (isset($_POST['submit'])) {
             $user_id
         );
 
-        // Prepare SQL statement
+
         $sql = "INSERT INTO Payment (CardNum, ownerName, Product_id, User_id) VALUES (:cardNum, :ownerName, :product_id, :user_id)";
-
-        // Bind parameters + execute statement
         $statement = $connection->prepare($sql);
-        $cardNum = $payment->getCardNum();
-        $statement->bindParam(':cardNum', $cardNum);
-        $ownerName = $payment->getOwnerName();
-        $statement->bindParam(':ownerName', $ownerName);
-        $statement->bindParam(':product_id', $product_id); // Bind product_id
-        $statement->bindParam(':user_id', $user_id); // Bind user_id
-
+        $statement->bindParam(':cardNum', $payment->getCardNum());
+        $statement->bindParam(':ownerName', $payment->getOwnerName());
+        $statement->bindParam(':product_id', $product_id);
+        $statement->bindParam(':user_id', $user_id);
         $statement->execute();
 
-        echo $cardNum . ' successfully added';
+
+        $_SESSION['useMileagePoints'] = isset($_POST['useMileagePoints']) && $_POST['useMileagePoints'] == 'yes';
+
+
         header("Location: final.php");
         exit();
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
 }
+
 ?>
 
 <head>
@@ -89,5 +96,9 @@ if (isset($_POST['submit'])) {
 
 
     <input type="hidden" name="reservation_id">
-    <input type="submit" name="submit" value="submit">
+
+    <label for="useMileagePoints">Use Mileage Points?</label>
+    <input type="checkbox" name="useMileagePoints" id="useMileagePoints" value="yes">
+
+    <input type="submit" name="submit" value="Submit">
 </form>

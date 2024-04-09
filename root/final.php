@@ -1,18 +1,23 @@
+
 <?php
 require "templates/header.php";
-echo "Thank you for shopping with Global Getaways. Check your email for booking confirmation";
 ?>
 
 <body>
-<h1>This is what you Booked : </h1>
-<?php
-require "connection/connectionToDB.php";
-require "connection/config.php";
-require "classes/finalSummary.php";
+<div class="final-container">
+    <h1 class="final-h1">This is what you Booked:</h1>
+    <div class="final-summary">
+        <?php
+        require "connection/connectionToDB.php";
+        require "connection/config.php";
+        require "classes/finalSummary.php";
 
-// Check if the product ID is set in the session
-finalSummary::displayBookingInformation();
-
-
-?>
+        // Display booking information
+        finalSummary::displayBookingInformation();
+        ?>
+    </div>
+    <div class="final-footer">
+        <p>Thank you for choosing Global Getaways!</p>
+    </div>
+</div>
 </body>

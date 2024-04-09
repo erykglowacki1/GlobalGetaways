@@ -1,0 +1,30 @@
+
+.final-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.final-h1 {
+    color: #333;
+    text-align: center;
+}
+.final-summary {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.summary p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+.summary span {
+    font-weight: bold;
+}
+.final-footer {
+    text-align: center;
+    margin-top: 30px;
+}

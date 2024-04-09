@@ -1,6 +1,7 @@
 <?php
 require "templates/header.php";
 ?>
+
 <main>
     <h1 id="conTitle">Contact us</h1>
     <div class="container">

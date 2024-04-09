@@ -1,22 +1,73 @@
-table {
-    height: 400px;
-    width: 50%;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
 }
 
-
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: center;
-}
-
-
-
-h2 {
-    text-align: center;
-    font-size: 25px;
-}
-.container {
+.container, .form-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
 }
+
+.destinations-table, .activities-table, .hotels-table {
+    border-collapse: collapse;
+    width: 80%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.table-header-row th, .activities-table th, .hotels-table th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 8px;
+    text-align: left;
+}
+
+.data-row td, .activities-table td, .hotels-table td {
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.data-row:nth-child(even), .activities-table tr:nth-child(even), .hotels-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.data-row:hover, .activities-table tr:hover, .hotels-table tr:hover {
+    background-color: #ddd;
+}
+
+h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+form {
+    width: 100%;
+    max-width: 800px;
+}
+
