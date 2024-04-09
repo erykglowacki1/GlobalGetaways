@@ -33,16 +33,13 @@ if (isset($_SESSION['user_id'])) {
 
 <?php
 
-session_start();
-
-
 if (isset($_POST['submit'])) {
 
     require "common.php";
     try {
         require_once 'connection/connectionToDB.php';
 
-        // Assuming user and product IDs are already stored in the session
+        // Assuming user and product IDs arestored in the session
         $product_id = $_SESSION['product_id'];
         $user_id = $_SESSION['user_id'];
 

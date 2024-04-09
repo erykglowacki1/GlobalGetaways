@@ -3,14 +3,26 @@ require "templates/header.php";
 require "common.php";
 require_once 'connection/connectionToDB.php';
 require "classes/Destination.php";
+require "classes/DestinationSearch.php";
 
 
 $result = [];
 $error_message = "";
 
 if (isset($_POST['search_submit'])) {
-    $search_place = $_POST['search_place'];
-    Destination::searchDestination($search_place, $result, $error_message);
+    try {
+        $search_place = $_POST['search_place'];
+        $destinationSearch = new DestinationSearch($connection);
+        $result = $destinationSearch->searchDestination($search_place);
+        if ($result === null) {
+            $error_message = "No results found for " . htmlspecialchars($search_place) . ".";
+        } else {
+            // getId() is the method to retrieve the ID of a destination
+            $_SESSION['destination_id'] = $result[0]->getId();
+        }
+    } catch (Exception $e) {
+        $error_message = "An error occurred: " . $e->getMessage();
+    }
 }
 ?>
 
@@ -63,21 +75,19 @@ if (isset($_POST['search_submit'])) {
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($result as $row): ?>
+        <?php foreach ($result as $destination): ?>
             <tr>
-                <td><?php echo escape($row["City"]); ?></td>
-                <td><?php echo escape($row["Description"]); ?></td>
-                <td><?php echo escape($row["Price"]); ?></td>
-
+                <td><?php echo escape($destination->getCity()); ?></td>
+                <td><?php echo escape($destination->getDescription()); ?></td>
+                <td><?php echo escape($destination->getPrice()); ?></td>
                 <td>
-
                     <form action="Auth.php" method="post">
-                        <input type="hidden" name="City" value="<?php echo escape($row["City"]); ?>">
-                        <input type="hidden" name="Description" value="<?php echo escape($row["Description"]); ?>">
-                        <input type="hidden" name="Price" value="<?php echo escape($row["Price"]); ?>">
-                        <input type="hidden" name="destination_id" value="<?php echo escape($row["id"]); ?>">
+                        <input type="hidden" name="City" value="<?php echo escape($destination->getCity()); ?>">
+                        <input type="hidden" name="Description"
+                               value="<?php echo escape($destination->getDescription()); ?>">
+                        <input type="hidden" name="Price" value="<?php echo escape($destination->getPrice()); ?>">
+                        <input type="hidden" name="destination_id" value="<?php echo $_SESSION['destination_id']; ?>">
                         <input type="submit" name="book_submit" value="Book Here">
-
                     </form>
                 </td>
             </tr>

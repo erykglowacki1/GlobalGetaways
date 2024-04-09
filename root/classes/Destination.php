@@ -54,26 +54,12 @@ class Destination
         return $this->description;
     }
 
-
-
-
-   public static function searchDestination($search_place, &$result, &$error_message)
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
     {
-        global $connection;
-
-        try {
-            $sql = "SELECT * FROM Destination WHERE City = :City";
-            $statement = $connection->prepare($sql);
-            $statement->bindParam(':City', $search_place, PDO::PARAM_STR);
-            $statement->execute();
-            $result = $statement->fetchAll();
-
-            if ($statement->rowCount() == 0) {
-                $error_message = "No results found for " . htmlspecialchars($search_place) . ".";
-            }
-        } catch (PDOException $error) {
-            $error_message = "An error occurred: " . $error->getMessage();
-        }
+        $this->id = $id;
     }
 }
 
