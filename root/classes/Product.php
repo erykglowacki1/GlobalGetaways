@@ -48,6 +48,13 @@ class Product
 
 // Handle form submission
         if (isset($_POST['submit'])) {
+
+            if (!empty($_POST['destination_id'])) { // Assuming a form field named destination_id
+                $destination_id = $_POST['destination_id']; // Retrieve destination_id from form submission
+            } else {
+                $destination_id = null;
+            }
+
             if (!empty($_POST['activity_id'])) {
                 $activity_id = $_POST['activity_id'][0]; // Assuming only one activity can be selected
             } else {

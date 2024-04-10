@@ -74,7 +74,7 @@ class Payment
             try {
                 require_once 'connection/connectionToDB.php';
 
-                // Assuming user and product IDs arestored in the session
+                // Assuming user and product IDs are stored in the session
                 $product_id = $_SESSION['product_id'];
                 $user_id = $_SESSION['user_id'];
 

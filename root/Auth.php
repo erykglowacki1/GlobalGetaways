@@ -13,7 +13,7 @@ $hotels_result = [];
 try {
     if (isset($_POST['destination_id'])) {
         $destination_id = $_POST['destination_id'];
-
+        echo "Destination ID received: " . $destination_id;
         // Retrieve activities and hotels linked to the specified destination
 //        $activities_result = Activity::getActivitiesByDestinationId($connection, $destination_id);
 
@@ -37,7 +37,6 @@ try {
 
 <div class="form-container">
     <h2>Add an Activity</h2>
-    <h2>Current Total Price :</h2>
     <form method="post" action="">
         <table class="activities-table">
             <thead>
@@ -52,7 +51,6 @@ try {
                 <tr>
                     <td><?php echo escape($activity->getEquipment()); ?></td>
                     <td><?php echo escape($activity->getPrice()); ?></td>
-                    <td><?php echo $activity->getActivityId(); ?></td>
                     <td>
                         <input type="checkbox" name="activity_id[]" value="<?php echo $activity->getActivityId(); ?>">
                     </td>
@@ -79,7 +77,6 @@ try {
                     <td><?php echo escape($hotel->getHotelName()); ?></td>
                     <td><?php echo escape($hotel->getNumRooms()); ?></td>
                     <td><?php echo escape($hotel->getPrice()); ?></td>
-                    <td><?php echo $hotel->getHotelId(); ?></td>
                     <td>
                         <input type="checkbox" name="hotel_id[]" value="<?php echo $hotel->getHotelId(); ?>">
                     </td>
@@ -97,6 +94,7 @@ try {
 
 
 <?php
+
 Product::addingToProduct($connection);
 ?>
 

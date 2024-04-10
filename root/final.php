@@ -11,7 +11,6 @@ require "templates/header.php";
         require "connection/connectionToDB.php";
         require "connection/config.php";
         require "classes/finalSummary.php";
-
         // Display booking information
         finalSummary::displayBookingInformation();
         ?>
