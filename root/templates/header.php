@@ -29,6 +29,9 @@ if ($_SESSION['Active'] == false){
             <h1>Global Getaways</h1>
         </div>
 
+        <div class="profile-button">
+            <a href="profilePage.php"><button>Profile</button></a>
+        </div>
         <div class="login-button">
         <form action="logout.php" method="post" name="Logout_Form" class="form-signin">
             <button name="Submit" value="Logout" class="button" type="submit">Log out</button>

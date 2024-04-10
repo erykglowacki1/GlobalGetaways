@@ -63,5 +63,17 @@ class User {
         $stmt->execute([$email]);
         return (bool)$stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function getUserDetails($id) {
+        $stmt = $this->db->prepare("SELECT * FROM User WHERE id = ? LIMIT 1");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function changePassword($id, $password) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $this->db->prepare("UPDATE User SET Password = ? WHERE id = ?");
+        $stmt->execute([$hashedPassword, $id]);
+    }
 }
 ?>

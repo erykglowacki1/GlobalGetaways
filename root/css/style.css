@@ -32,6 +32,20 @@ body, h1, h2, h3, p, ul, li, a, button {
     transition: background-color 0.3s ease;
 }
 
+.title-bar .profile-button button:hover {
+    background-color: #005580;
+}
+
+.title-bar .profile-button button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
 .title-bar .login-button button:hover {
     background-color: #005580;
 }
