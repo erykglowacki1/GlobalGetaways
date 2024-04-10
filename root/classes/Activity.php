@@ -2,7 +2,7 @@
 
 class Activity
 {
-   // private $activityId; //primary key
+    private $ActivityId;
     private $equipment;
 
     private $destinationid;
@@ -28,16 +28,21 @@ class Activity
      */
     public function getActivityId()
     {
-        return $this->activityId;
+        return $this->ActivityId;
     }
 
     /**
-     * @param mixed $activityId
+     * @param mixed $ActivityId
      */
-    public function setActivityId($activityId)
+    public function setActivityId($ActivityId): void
     {
-        $this->activityId = $activityId;
+        $this->ActivityId = $ActivityId;
     }
+
+    /**
+     * @return mixed
+     */
+
 
     /**
      * @return mixed
@@ -50,11 +55,7 @@ class Activity
     /**
      * @param mixed $destinationid
      */
-    public function setDestinationid($destinationid)
-    {
-        $this->destinationid = $destinationid;
-    }
-
+   
 
     /**
      * @return mixed

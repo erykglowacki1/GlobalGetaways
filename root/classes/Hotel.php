@@ -2,6 +2,23 @@
 
 class Hotel
 {
+    private $HotelId;
+
+    /**
+     * @return mixed
+     */
+    public function getHotelId()
+    {
+        return $this->HotelId;
+    }
+
+    /**
+     * @param mixed $HotelId
+     */
+    public function setHotelId($HotelId): void
+    {
+        $this->HotelId = $HotelId;
+    }
     //primary key
     private $hotelName;
     private $numRooms;

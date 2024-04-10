@@ -3,23 +3,35 @@ require "templates/header.php";
 require "classes/Destination.php";
 require "classes/Activity.php";
 require "classes/Hotel.php";
+require "classes/Product.php";
 require "common.php";
+require "classes/ActivityRepository.php";
+require "classes/HotelRepository.php";
 require_once 'connection/connectionToDB.php';
-
+$activities_result = [];
+$hotels_result = [];
 try {
-    if(isset($_POST['destination_id'])) {
+    if (isset($_POST['destination_id'])) {
         $destination_id = $_POST['destination_id'];
 
         // Retrieve activities and hotels linked to the specified destination
-        $activities_result = Activity::getActivitiesByDestinationId($connection, $destination_id);
-        $hotels_result = Hotel::getHotelsByDestinationId($connection, $destination_id);
+//        $activities_result = Activity::getActivitiesByDestinationId($connection, $destination_id);
+
+        $activityRepository = new ActivityRepository($connection);
+        $activities_result = $activityRepository->getActivitiesByDestinationId($destination_id);
+
+        $hotelRepository = new HotelRepository($connection);
+        $hotels_result = $hotelRepository->getHotelsByDestinationId($destination_id);
+
+//        $hotels_result = Hotel::getHotelsByDestinationId($connection, $destination_id);
+
     } else {
         echo "No destination_id received.";
-        $activities_result = [];
-        $hotels_result = [];
+
     }
 } catch (PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
+} catch (Exception $e) {
 }
 ?>
 
@@ -36,15 +48,18 @@ try {
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($activities_result as $row) : ?>
+            <?php foreach ($activities_result as $activity) : ?>
                 <tr>
-                    <td><?php echo escape($row["Equipment"]); ?></td>
-                    <td><?php echo escape($row["Price"]); ?></td>
+                    <td><?php echo escape($activity->getEquipment()); ?></td>
+                    <td><?php echo escape($activity->getPrice()); ?></td>
+                    <td><?php echo $activity->getActivityId(); ?></td>
                     <td>
-                        <input type="checkbox" name="activity_id[]" value="<?php echo $row['id']; ?>">
+                        <input type="checkbox" name="activity_id[]" value="<?php echo $activity->getActivityId(); ?>">
                     </td>
                 </tr>
+
             <?php endforeach; ?>
+
             </tbody>
         </table>
 
@@ -53,22 +68,24 @@ try {
             <thead>
             <tr>
                 <th>Hotel Name</th>
-                <th>Number of rooms needed</th>
+                <th>Number of rooms available</th>
                 <th>Price</th>
                 <th>Add to package</th>
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($hotels_result as $row) : ?>
+            <?php foreach ($hotels_result as $hotel) : ?>
                 <tr>
-                    <td><?php echo escape($row["HotelName"]); ?></td>
-                    <td><?php echo escape($row["NumOfRooms"]); ?></td>
-                    <td><?php echo escape($row["Price"]); ?></td>
+                    <td><?php echo escape($hotel->getHotelName()); ?></td>
+                    <td><?php echo escape($hotel->getNumRooms()); ?></td>
+                    <td><?php echo escape($hotel->getPrice()); ?></td>
+                    <td><?php echo $hotel->getHotelId(); ?></td>
                     <td>
-                        <input type="checkbox" name="hotel_id[]" value="<?php echo $row['id']; ?>">
+                        <input type="checkbox" name="hotel_id[]" value="<?php echo $hotel->getHotelId(); ?>">
                     </td>
                 </tr>
             <?php endforeach; ?>
+
             </tbody>
         </table>
 
@@ -77,39 +94,9 @@ try {
     </form>
 </div>
 
+
+
 <?php
-// Handle form submission
-if(isset($_POST['submit'])) {
-    if (!empty($_POST['activity_id'])) {
-        $activity_id = $_POST['activity_id'][0]; // Assuming only one activity can be selected
-    } else {
-        $activity_id = null;
-    }
-
-    if (!empty($_POST['hotel_id'])) {
-        $hotel_id = $_POST['hotel_id'][0]; // Assuming only one hotel can be selected
-    } else {
-        $hotel_id = null;
-    }
-
-    // Insert activities into Product table
-    $sql = "INSERT INTO Product (Destination_id, Activity_id, Hotel_id) VALUES (:destination_id, :activity_id, :hotel_id)";
-    $statement = $connection->prepare($sql);
-    $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
-    $statement->bindParam(':activity_id', $activity_id, PDO::PARAM_INT);
-    $statement->bindParam(':hotel_id', $hotel_id, PDO::PARAM_INT);
-    $statement->execute();
-    echo "Items were added to package";
-
-    // Get the last inserted product ID
-    $product_id = $connection->lastInsertId();
-
-    // Store product ID in session
-    $_SESSION['product_id'] = $product_id;
-
-    // Redirect to payment page
-    header("Location: purchasePage.php");
-    exit();
-}
+Product::addingToProduct($connection);
 ?>
 

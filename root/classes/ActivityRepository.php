@@ -15,6 +15,14 @@ class ActivityRepository
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(':destinationId', $destinationId, PDO::PARAM_INT);
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        $activities = [];
+
+        if ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $activity = new Activity($row['Equipment'], $row['Price'], $row['Destination_id']);
+            $activity->setActivityID($row['id']);
+            $activities[] = $activity;
+        }
+
+        return $activities;
     }
 }
