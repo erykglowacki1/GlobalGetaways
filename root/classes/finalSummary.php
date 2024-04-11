@@ -55,11 +55,11 @@ class finalSummary
                     echo "<p><span>Total Price:</span> €" . number_format($originalTotalPrice, 2) . "</p>";
 
                     if ($useMileagePoints) {
-                        echo "<p><span>Mileage Points Used:</span> " . number_format($mileagePointsDiscount / 0.50, 0) . "</p>";
-                        echo "<p><span>Mileage Points Discount:</span> €" . number_format($mileagePointsDiscount, 2) . "</p>";
+                        echo "<p><span>Mileage Points Used:</span> " . number_format($mileagePointsDiscount / 0.50, 0) . "</p><br><br><br><br>";
+                        echo "<p class='Cash'><span class='Mileage'>Mileage Points Discount:</span> €" . number_format($mileagePointsDiscount, 2) . "</p>";
                     }
 
-                    echo "<p><span>Total Amount after Discount:</span> €" . number_format($finalTotalPrice, 2) . "</p>";
+                    echo "<p><span class='TotalAmount'>Total Amount after Discount:</span> €" . number_format($finalTotalPrice, 2) . "</p>";
                 } else {
                     echo "<p>No transaction found for the current session.</p>";
                 }

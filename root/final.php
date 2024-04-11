@@ -3,6 +3,10 @@
 require "templates/header.php";
 ?>
 
+<head>
+    <link rel="stylesheet" href="css/final.css">
+</head>
+
 <body>
 <div class="final-container">
     <h1 class="final-h1">This is what you Booked:</h1>
@@ -20,3 +24,6 @@ require "templates/header.php";
     </div>
 </div>
 </body>
+<?php
+require "templates/footer.php";
+?>

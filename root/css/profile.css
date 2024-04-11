@@ -1,0 +1,63 @@
+
+
+.UserProfile {
+    background-color: white;
+    width: 100%;
+    max-width: 350px;
+    margin: 30px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #004785; /* Dark Royal Blue */
+    margin-bottom: 1rem;
+}
+
+.user-details h2 {
+    color: #2574be;
+    margin-bottom: 0.5rem;
+}
+
+.user-details p {
+    color: #333; /* Dark text for readability */
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* 'Edit' link next to the password */
+.user-details a {
+    color: #004785; /* Dark Royal Blue */
+    text-decoration: none;
+}
+
+.user-details a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the password change form */
+#passwordChangeForm {
+    margin-top: 20px;
+}
+
+#passwordChangeForm input[type="password"],
+#passwordChangeForm input[type="submit"] {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#passwordChangeForm input[type="submit"] {
+    background-color: #004785; /* Dark Royal Blue */
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+#passwordChangeForm input[type="submit"]:hover {
+    background-color: #003366; /* A darker shade of royal blue */
+}

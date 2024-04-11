@@ -5,14 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/root/css/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/templates/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/classes/finalSummary.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/finalSummary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/css/Results.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/Results.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/css/contact.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/contact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/css/destinationPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/destinationPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/css/final.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/final.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/destinations.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/root/final.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/final.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/profilePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/profilePage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/purchasePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/purchasePage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/templates/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +95,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.15026.12" />
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.14015.96" />
       </set>
     </attachedChunks>
   </component>
@@ -123,6 +134,7 @@
       <workItem from="1712751739768" duration="1499000" />
       <workItem from="1712783646418" duration="74000" />
       <workItem from="1712783723028" duration="696000" />
+      <workItem from="1712853766725" duration="15783000" />
     </task>
     <servers />
   </component>

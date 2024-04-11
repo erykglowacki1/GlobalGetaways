@@ -34,7 +34,9 @@ try {
 } catch (Exception $e) {
 }
 ?>
-
+<head>
+    <link rel="stylesheet" href="css/destinationPage.css"
+</head>
 <div class="form-container">
     <h2>Add an Activity</h2>
     <form method="post" action="">
@@ -91,7 +93,9 @@ try {
     </form>
 </div>
 
-
+<?php
+require "templates/footer.php";
+?>
 
 <?php
 

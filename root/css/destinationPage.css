@@ -1,10 +1,4 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-}
+
 
 .container, .form-container {
     display: flex;
@@ -44,8 +38,8 @@ body {
     background-color: #ddd;
 }
 
-h2 {
-    color: #333;
+.desth2 {
+    color: #f4f0e8;
     font-size: 28px;
     margin-bottom: 10px;
 }
@@ -70,4 +64,31 @@ form {
     width: 100%;
     max-width: 800px;
 }
+.gal{
+    text-align: center;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns of equal size */
+    gap: 10px; /* Sets the gap between grid items */
+    max-width: 800px; /* Limits the width of the grid */
+    margin: auto; /* Centers the grid horizontally */
+}
 
+.grid-item img {
+    width: 100%; /* Makes the image fill the container */
+    height: auto; /* Keeps the aspect ratio of the image */
+    display: block; /* Removes any extra space below the image */
+}
+
+@media (max-width: 800px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* One column on very small screens */
+    }
+}

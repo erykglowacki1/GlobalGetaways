@@ -15,7 +15,10 @@ try {
 <?php
 require "templates/header.php";
 ?>
-<h2>List of all of the destinations we offer</h2>
+<head>
+    <link rel="stylesheet" href="css/destinationPage.css">
+</head>
+<h2 class="desth2">List of all of the destinations we offer</h2>
 <?php if (!empty($success)) echo $success; ?>
 <div class="container">
     <table class="destinations-table">
@@ -35,6 +38,22 @@ require "templates/header.php";
         </tbody>
     </table>
 </div>
+
+<h2 class="gal">Gallery</h2>
+<div class="image-grid">
+    <div class="grid-item"><img src="destinations/London.jpeg" alt="Image 1"></div>
+    <div class="grid-item"><img src="destinations/Albufeira.jpeg" alt="Image 2"></div>
+    <div class="grid-item"><img src="destinations/Tokyo.jpeg" alt="Image 3"></div>
+    <div class="grid-item"><img src="destinations/Split.jpeg" alt="Image 4"></div>
+    <div class="grid-item"><img src="destinations/Whistler.jpeg" alt="Image 5"></div>
+    <div class="grid-item"><img src="destinations/LA.jpeg" alt="Image 6"></div>
+</div>
+
+
+
+<?php
+require "templates/footer.php";
+?>
 
 
 

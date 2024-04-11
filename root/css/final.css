@@ -1,4 +1,7 @@
-
+body{
+    background: linear-gradient(to bottom, #004785, #ffd700);
+    height: 100vh;
+}
 .final-container {
     max-width: 800px;
     margin: auto;
@@ -7,7 +10,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .final-h1 {
-    color: #333;
+    color: black;
     text-align: center;
 }
 .final-summary {
@@ -16,15 +19,27 @@
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-.summary p {
+ p {
     font-size: 16px;
     line-height: 1.6;
-    color: #666;
+    color: black;
 }
-.summary span {
+ span {
     font-weight: bold;
 }
 .final-footer {
     text-align: center;
     margin-top: 30px;
+}
+
+.Mileage{
+    color: red;
+}
+
+.Cash{
+    color: red;
+}
+.TotalAmount{
+    font-size: 18px;
+    color: black;
 }

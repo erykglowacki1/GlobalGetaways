@@ -51,5 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change_password'])) {
         </div>
     </div>
 </div>
+
 </body>
 </html>
+<?php
+require "templates/footer.php";
+?>

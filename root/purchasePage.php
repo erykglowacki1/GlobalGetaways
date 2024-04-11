@@ -9,10 +9,11 @@ Payment::checkForPassedIds();
 Payment::settingPaymentInformation();
 
 ?>
-
 <head>
     <link rel="stylesheet" href="css/payment.css">
 </head>
+<body>
+
 
 <form method="post">
 
@@ -36,3 +37,8 @@ Payment::settingPaymentInformation();
 
     <input type="submit" name="submit" value="Submit">
 </form>
+</body>
+<?php
+require "templates/footer.php";
+?>
+

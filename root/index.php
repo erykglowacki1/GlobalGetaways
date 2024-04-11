@@ -27,9 +27,7 @@ if (isset($_POST['search_submit'])) {
 ?>
 
 <head>
-    <link rel="stylesheet" href="css/Results.css">
     <title>Search</title>
-
 </head>
 <h1>Logged in <?php echo
     $_SESSION['user_name']; ?> : </h1>
@@ -64,40 +62,52 @@ if (isset($_POST['search_submit'])) {
 
 
 <?php if (!empty($result)): ?>
-    <h2>Best Flight Found</h2>
-    <table>
-        <thead>
-        <tr>
-            <th>City</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Book</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($result as $destination): ?>
-            <tr>
-                <td><?php echo escape($destination->getCity()); ?></td>
-                <td><?php echo escape($destination->getDescription()); ?></td>
-                <td><?php echo escape($destination->getPrice()); ?></td>
-                <td>
-                    <form action="Auth.php" method="post">
-                        <input type="hidden" name="City" value="<?php echo escape($destination->getCity()); ?>">
-                        <input type="hidden" name="Description"
-                               value="<?php echo escape($destination->getDescription()); ?>">
-                        <input type="hidden" name="Price" value="<?php echo escape($destination->getPrice()); ?>">
-                        <input type="hidden" name="destination_id" value="<?php echo $_SESSION['destination_id']; ?>">
-                        <input type="submit" name="book_submit" value="Book Here">
-                    </form>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+    <div class="results-section">
+        <h2>Best Flight Found</h2>
+        <div class="results-table">
+            <table>
+                <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Book</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($result as $destination): ?>
+                    <tr>
+                        <td><?php echo escape($destination->getCity()); ?></td>
+                        <td><?php echo escape($destination->getDescription()); ?></td>
+                        <td><?php echo escape($destination->getPrice()); ?></td>
+                        <td>
+                            <form action="Auth.php" method="post">
+                                <input type="hidden" name="City" value="<?php echo escape($destination->getCity()); ?>">
+                                <input type="hidden" name="Description" value="<?php echo escape($destination->getDescription()); ?>">
+                                <input type="hidden" name="Price" value="<?php echo escape($destination->getPrice()); ?>">
+                                <input type="hidden" name="destination_id" value="<?php echo $_SESSION['destination_id']; ?>">
+
+                               <div class="submit-button2"><input type="submit" name="book_submit" value="Book Here">
+                               </div>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
 <?php elseif ($error_message): ?>
-    <p><?php echo $error_message; ?></p>
+    <div class="error-section">
+        <p><?php echo $error_message; ?></p>
+    </div>
+    <?
+    require "templates/footer.php";
+    ?>
 <?php endif; ?>
 
-</body>
-</html>
+
 

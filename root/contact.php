@@ -1,7 +1,9 @@
 <?php
 require "templates/header.php";
 ?>
-
+<head>
+    <link rel="stylesheet" href="css/contact.css">
+</head>
 <main>
     <h1 id="conTitle">Contact us</h1>
     <div class="container">
@@ -23,5 +25,7 @@ require "templates/header.php";
 
     </section>
     </div>
-
 </main>
+<?php
+require "templates/footer.php";
+?>
