@@ -1,5 +1,4 @@
 
-
 .container, .form-container {
     display: flex;
     justify-content: center;
@@ -17,8 +16,8 @@
 }
 
 .table-header-row th, .activities-table th, .hotels-table th {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #004785; /* Dark Royal Blue */
+    color: #ffd700; /* Gold */
     padding: 10px 8px;
     text-align: left;
 }
@@ -39,13 +38,14 @@
 }
 
 .desth2 {
-    color: #f4f0e8;
+    color: #f5f1f1;
     font-size: 28px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #004785; /* Dark Royal Blue */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -53,6 +53,11 @@ input[type="submit"] {
     cursor: pointer;
     font-size: 16px;
     margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #003366; /* A darker shade of blue */
+    color: #ffd700; /* Gold */
 }
 
 input[type="checkbox"] {
@@ -64,9 +69,11 @@ form {
     width: 100%;
     max-width: 800px;
 }
-.gal{
+
+.gal {
     text-align: center;
 }
+
 .image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Creates three columns of equal size */

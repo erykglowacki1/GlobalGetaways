@@ -26,8 +26,9 @@ if ($_SESSION['Active'] == false){
         </div>
 
         <div class="profile-button">
-            <a href="profilePage.php"><button>Profile</button></a>
+            <a href="profilePage.php" class="profile-link"><i class="fa-solid fa-user"></i></a>
         </div>
+
         <div class="login-button">
         <form action="logout.php" method="post" name="Logout_Form" class="form-signin">
             <button name="Submit" value="Logout" class="button" type="submit">Log out</button>
@@ -38,9 +39,9 @@ if ($_SESSION['Active'] == false){
     <!-- Navigation Bar -->
     <nav class="navbar">
         <ul class="nav-links">
-            <li><i class="fa-solid fa-house"></i><a href="index.php">Home</a></li>
-            <li><i class="fa-solid fa-location-dot"></i><a href="destinations.php">Destinations</a></li>
-            <li><i class="fa-solid fa-phone"></i><a href="contact.php">Contact</a></li>
+            <li><i class="fa-solid fa-house" style="color: #f5f1f1;"></i><a href="index.php">Home</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color: #f5f1f1;"></i><a href="destinations.php">Destinations</a></li>
+            <li><i class="fa-solid fa-phone" style="color: #f5f1f1;"></i><a href="contact.php">Contact</a></li>
 
         </ul>
         <div class="burger">

@@ -104,10 +104,11 @@ if (isset($_POST['search_submit'])) {
     <div class="error-section">
         <p><?php echo $error_message; ?></p>
     </div>
+<?php endif; ?>
+
     <?
     require "templates/footer.php";
     ?>
-<?php endif; ?>
 
 
 

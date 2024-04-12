@@ -18,7 +18,7 @@ Payment::settingPaymentInformation();
 <form method="post">
 
     <label for="cardNum">Card Number</label>
-    <input type="number" name="CardNum" id="cardNum">
+    <input type="text" name="CardNum" id="cardNum" maxlength="16">
 
     <label for="expirationDate">Expiration Date</label>
     <input type="date" name="expirationDate" id="expirationDate">
@@ -27,7 +27,7 @@ Payment::settingPaymentInformation();
     <input type="text" name="ownerName" id="ownerName">
 
     <label for="cvv">CVV</label>
-    <input type="number" name="cvv" id="cvv">
+    <input type="text" name="cvv" id="cvv" maxlength="3">
 
 
     <input type="hidden" name="reservation_id">
