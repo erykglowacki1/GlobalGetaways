@@ -26,7 +26,7 @@ body {
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: #004785; /* Dark Royal Blue */
+    color: #004785;
 }
 
 .title-bar .login-button button,
@@ -46,13 +46,13 @@ body {
 
 .title-bar .login-button button:hover,
 .title-bar .profile-button a:hover {
-    background-color: #003366; 
+    background-color: #003366;
 }
 
 
 /* Search bar styles */
 .search-bar {
-    background-color: transparent; /* Kept white for clarity and contrast */
+    background-color: transparent;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -62,12 +62,12 @@ body {
     color: #F5F1F1FF;
 }
 
-/* Keeping input and select styling for usability */
+
 .search-bar input[type="text"],
 .search-bar input[type="date"],
 .search-bar select {
     padding: 0.5rem;
-    border: 1px solid black; /* Consider a gold border if you prefer */
+    border: 1px solid black;
     border-radius: 4px;
     font-size: 1rem;
 }
@@ -77,8 +77,8 @@ body {
 }
 
 .search-bar input[type="submit"] {
-    background-color: #ffd700; /* Gold */
-    color: #004785; /* Dark Royal Blue */
+    background-color: #ffd700;
+    color: #004785;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -87,46 +87,65 @@ body {
 }
 
 .search-bar input[type="submit"]:hover {
-    background-color: #cca300; /* Darker gold for hover */
+    background-color: #cca300;
 }
 
 /* Results Section */
 .results-section {
-    background-color: transparent; /* Keeps background consistent with the gradient or other design elements */
+    background-color: transparent;
     border-radius: 8px;
-    padding: 20px; /* Reduced padding might help in extending the section more horizontally */
-    margin: 10px auto; /* Smaller margin can also help expand the section horizontally */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 95%; /* Adjust width to match or align with your search bar */
-    max-width: 1200px; /* Set a reasonable max width for very large screens */
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+.results-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .results-table th {
-    background-color: #ffd700; /* Gold */
-    color: #004785; /* Dark Royal Blue */
+    background-color: #004785;
+    color: #ffd700;
+    padding: 10px 8px;
+    text-align: left;
 }
 
 .results-table td {
-    color: white; /* Keeping text dark for readability */
-}
-/* Adjustments for buttons within submit-button2 class */
-.submit-button2 input[type="submit"] {
-    background-color: #ffd700; /* Gold */
-    color: #004785; /* Dark Royal Blue */
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    text-align: left;
+    font-size: 14px;
+    background-color: #fff;
 }
 
-.submit-button2 [type="submit"]:hover {
-    background-color: #cca300; /* Darker gold for hover */
+.results-table tr:hover {
+    background-color: #ddd;
+}
+
+
+.submit-button2 input[type="submit"] {
+    background-color: #004785;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    border: none;
+}
+
+.submit-button2 input[type="submit"]:hover {
+    background-color: #003366;
+    color: #ffd700;
 }
 
 /* Navbar styles */
 .navbar {
-    background-color: #004785; /* Dark Royal Blue for the navbar background */
+    background-color: #004785;
     padding: 1rem;
 }
 
@@ -138,19 +157,19 @@ body {
 }
 
 .nav-links li a {
-    color: #ffd700; /* Gold for link text */
+    color: #ffd700;
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #ffffff; /* Optional: White for hover to maintain readability and contrast */
+    color: #ffffff;
 }
 
 
 .site-footer {
-    background-color: #004785; /* Dark royal blue background */
+    background-color: #004785;
     color: white;
     padding: 20px;
     text-align: center;
@@ -176,11 +195,11 @@ body {
 .social-links a {
     color: white;
     text-decoration: none;
-    font-size: 24px; /* Adjust the size as needed */
+    font-size: 24px;
 }
 
 .social-links a:hover {
-    color: #ffd700; /* Gold color for hover state */
+    color: #ffd700;
 }
 
 .contact-link {

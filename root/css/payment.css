@@ -15,13 +15,13 @@ form {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #004785; /* Dark Royal Blue for labels */
+    color: #004785;
 }
 
 input[type="number"],
 input[type="date"],
 input[type="text"],
-input[type="password"] { /* Added input[type="password"] if needed */
+input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -31,8 +31,8 @@ input[type="password"] { /* Added input[type="password"] if needed */
 }
 
 input[type="submit"] {
-    background-color: #004785; /* Dark Royal Blue for buttons */
-    color: #ffd700; /* Gold text color */
+    background-color: #004785;
+    color: #ffd700;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -41,11 +41,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #003366; /* A darker shade of royal blue for hover effect */
+    background-color: #003366;
     color: white;
 }
 
 .error {
-    color: red; /* Keep error messages in red for standard convention */
+    color: red;
     margin-top: 5px;
 }
