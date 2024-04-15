@@ -26,7 +26,7 @@ class DestinationSearch
             foreach ($result as $row) {
                 // Set the id property based on database record
                 $destination = new Destination($row['City'], $row['Price'], $row['Description']);
-                $destination->setId($row['id']); // Assuming you have setId method in Destination class
+                $destination->setId($row['id']);
                 $destinations[] = $destination;
             }
 

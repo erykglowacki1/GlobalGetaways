@@ -77,6 +77,7 @@ class Product
             echo "Items were added to package";
 
             // Get the last inserted product ID
+            //Code taken off stack overflow
             $product_id = $connection->lastInsertId();
 
             // Store product ID in session

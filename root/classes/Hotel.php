@@ -19,6 +19,7 @@ class Hotel
     {
         $this->HotelId = $HotelId;
     }
+
     //primary key
     private $hotelName;
     private $numRooms;
@@ -46,10 +47,12 @@ class Hotel
     {
         return $this->hotelName;
     }
+
     public function getNumRooms()
     {
         return $this->numRooms;
     }
+
     public function getPrice()
     {
         return $this->price;
@@ -63,13 +66,36 @@ class Hotel
         return $this->destinationid;
     }
 
-   public static function getHotelsByDestinationId($connection, $destination_id) {
-        $sql = "SELECT * FROM Hotel WHERE Destination_id = :destination_id";
-        $statement = $connection->prepare($sql);
-        $statement->bindParam(':destination_id', $destination_id, PDO::PARAM_INT);
-        $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    /**
+     * @param mixed $hotelName
+     */
+    public function setHotelName($hotelName): void
+    {
+        $this->hotelName = $hotelName;
     }
 
+    /**
+     * @param mixed $numRooms
+     */
+    public function setNumRooms($numRooms): void
+    {
+        $this->numRooms = $numRooms;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price): void
+    {
+        $this->price = $price;
+    }
+
+    public function displayTestHotels()
+    {
+        echo $this->getHotelName();
+        echo $this->getNumRooms();
+        echo $this->getPrice();
+    }
 }
+
 ?>

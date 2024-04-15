@@ -39,6 +39,22 @@ class Payment
         return $this->product_id;
     }
 
+    /**
+     * @param mixed $cardNum
+     */
+    public function setCardNum($cardNum): void
+    {
+        $this->cardNum = $cardNum;
+    }
+
+    /**
+     * @param mixed $ownerName
+     */
+    public function setOwnerName($ownerName): void
+    {
+        $this->ownerName = $ownerName;
+    }
+
 
 
     /**
