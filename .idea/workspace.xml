@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/HotelTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/TestingHotel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GlobalGetaways.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GlobalGetaways.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/Tests/TestingDestination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/Tests/TestingPayment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/Tests/TestingUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/ActivityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/ActivityRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Destination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/DestinationSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/DestinationSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Hotel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/HotelTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingHotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Tests/TestingHotel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
