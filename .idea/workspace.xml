@@ -5,31 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/UnitTestingDestination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/UnitTestingPayment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/UnitTestingProduct.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GlobalGetaways.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GlobalGetaways.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/ActivityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/ActivityRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Destination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Hotel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Miles.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Miles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingDestination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingHotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Tests/UnitTestingHotel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingPayment.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <execution>
       <executable path="composer" />
     </execution>
@@ -69,6 +54,7 @@
     "PHP Script.UnitTestingHotel.php.executor": "Run",
     "PHP Script.UnitTestingPayment.php.executor": "Run",
     "PHP Script.UnitTestingProduct.php.executor": "Run",
+    "PHP Script.ValidationTests.php.executor": "Run",
     "PHP Script.admin.php.executor": "Run",
     "PHP Script.adminLogin.php.executor": "Debug",
     "PHP Script.config.php.executor": "Run",
@@ -86,7 +72,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "php.test.frameworks.configurable",
+    "settings.editor.selected.configurable": "settings.php.quality.tools",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
