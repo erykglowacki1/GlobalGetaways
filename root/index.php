@@ -29,7 +29,7 @@ if (isset($_POST['search_submit'])) {
 <head>
     <title>Search</title>
 </head>
-<h1>Logged in <?php echo
+<h1>Logged in as  <?php echo
     $_SESSION['user_name']; ?> : </h1>
 <body>
 <div class="search-form-container">

@@ -2,11 +2,11 @@
 
 class Product
 {
-    private $productId; //primary key
-    private $flightId;
-    private $activityId;
-    private $hotelId;
-    private $destinationId;
+    private int $productId; //primary key
+    private int $flightId;
+    private int $activityId;
+    private int $hotelId;
+    private int $destinationId;
 
     public function __construct($productId, $flightId, $activityId, $hotelId, $destinationId)
     {
@@ -17,31 +17,66 @@ class Product
         $this->destinationId = $destinationId;
     }
 
-    //getters and setters
-    public function getProductId()
+    public function getProductId(): int
     {
         return $this->productId;
     }
 
-    public function getFlightId()
+    public function setProductId(int $productId): void
+    {
+        $this->productId = $productId;
+    }
+
+    public function getFlightId(): int
     {
         return $this->flightId;
     }
 
-    public function getActivityId()
+    public function setFlightId(int $flightId): void
+    {
+        $this->flightId = $flightId;
+    }
+
+    public function getActivityId(): int
     {
         return $this->activityId;
     }
 
-    public function getHotelId()
+    public function setActivityId(int $activityId): void
+    {
+        $this->activityId = $activityId;
+    }
+
+    public function getHotelId(): int
     {
         return $this->hotelId;
     }
 
-    public function getDestinationId()
+    public function setHotelId(int $hotelId): void
+    {
+        $this->hotelId = $hotelId;
+    }
+
+    public function getDestinationId(): int
     {
         return $this->destinationId;
     }
+
+    public function setDestinationId(int $destinationId): void
+    {
+        $this->destinationId = $destinationId;
+    }
+
+
+    public function displayProduct()
+    {
+        echo "Product ID: " . $this->getProductId() . "\n";
+        echo "Flight ID: " . $this->getFlightId() . "\n";
+        echo "Activity ID: " . $this->getActivityId() . "\n";
+        echo "Hotel ID: " . $this->getHotelId() . "\n";
+        echo "Destination ID: " . $this->getDestinationId() . "\n";
+    }
+
 
     public static function addingToProduct($connection)
     {

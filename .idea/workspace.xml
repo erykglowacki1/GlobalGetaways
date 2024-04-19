@@ -5,12 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/TestingDestination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/TestingPayment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/TestingUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/Tests/UnitTestingDestination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/Tests/UnitTestingPayment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/Tests/UnitTestingProduct.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Tests/HotelTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingHotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Tests/TestingHotel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/ActivityRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/ActivityRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Destination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Hotel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Miles.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Miles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingDestination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingHotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Tests/UnitTestingHotel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingPayment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/TestingUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +64,11 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Codeception.Codeception.executor": "Run",
     "PHP Script.TestingHotel.php.executor": "Run",
+    "PHP Script.TestingPayment.php.executor": "Run",
+    "PHP Script.UnitTestingDestination.php.executor": "Run",
+    "PHP Script.UnitTestingHotel.php.executor": "Run",
+    "PHP Script.UnitTestingPayment.php.executor": "Run",
+    "PHP Script.UnitTestingProduct.php.executor": "Run",
     "PHP Script.admin.php.executor": "Run",
     "PHP Script.adminLogin.php.executor": "Debug",
     "PHP Script.config.php.executor": "Run",

@@ -4,11 +4,11 @@ require_once 'connection/connectionToDB.php';
 
 class User {
     private $db;
-    private $id;
-    private $fullName;
-    private $email;
-    private $age;
-    private $password;
+    private int $id;
+    private string $fullName;
+    private string $email;
+    private int $age;
+    private string $password;
 
     public function __construct() {
         global $connection;

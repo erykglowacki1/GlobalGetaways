@@ -3,11 +3,11 @@
 class Payment
 {
 
-    private $cardNum;
-    private $ownerName;
+    private int $cardNum;
+    private string $ownerName;
 
-    private $user_id;
-    private $product_id;
+    private int $user_id;
+    private int $product_id;
 
     /**
      * @param $cardNum
@@ -23,64 +23,55 @@ class Payment
         $this->product_id = $product_id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getUserId()
+    public function displayPaymentInfo()
     {
-        return $this->user_id;
+        echo "Card Number: " . $this->getCardNum() . "\n";
+        echo "Owner Name: " . $this->getOwnerName() . "\n";
+        echo "User ID: " . $this->getUserId() . "\n";
+        echo "Product ID: " . $this->getProductId() . "\n";
     }
 
-    /**
-     * @return mixed
-     */
-    public function getProductId()
-    {
-        return $this->product_id;
-    }
-
-    /**
-     * @param mixed $cardNum
-     */
-    public function setCardNum($cardNum): void
-    {
-        $this->cardNum = $cardNum;
-    }
-
-    /**
-     * @param mixed $ownerName
-     */
-    public function setOwnerName($ownerName): void
-    {
-        $this->ownerName = $ownerName;
-    }
-
-
-
-    /**
-     * @param $cardNum
-     * @param $ownerName
-
-     */
-
-
-
-
-    /**
-     * @return mixed
-     */
-    public function getCardNum()
+    public function getCardNum(): int
     {
         return $this->cardNum;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getOwnerName()
+    public function setCardNum(int $cardNum): void
+    {
+        $this->cardNum = $cardNum;
+    }
+
+    public function getOwnerName(): string
     {
         return $this->ownerName;
     }
+
+    public function setOwnerName(string $ownerName): void
+    {
+        $this->ownerName = $ownerName;
+    }
+
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(int $user_id): void
+    {
+        $this->user_id = $user_id;
+    }
+
+    public function getProductId(): int
+    {
+        return $this->product_id;
+    }
+
+    public function setProductId(int $product_id): void
+    {
+        $this->product_id = $product_id;
+    }
+
+
 
     public static function settingPaymentInformation()
     {

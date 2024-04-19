@@ -2,30 +2,19 @@
 
 class Hotel
 {
-    private $HotelId;
+    private int $HotelId;
 
     /**
      * @return mixed
      */
-    public function getHotelId()
-    {
-        return $this->HotelId;
-    }
 
-    /**
-     * @param mixed $HotelId
-     */
-    public function setHotelId($HotelId): void
-    {
-        $this->HotelId = $HotelId;
-    }
 
     //primary key
-    private $hotelName;
-    private $numRooms;
-    private $price;
+    private string $hotelName;
+    private int $numRooms;
+    private int $price;
 
-    private $destinationid;
+    private int $destinationid;
 
     //getters and setters
 
@@ -43,58 +32,63 @@ class Hotel
         $this->destinationid = $destinationid;
     }
 
-    public function getHotelName()
+    public function getHotelId(): int
+    {
+        return $this->HotelId;
+    }
+
+    public function setHotelId(int $HotelId): void
+    {
+        $this->HotelId = $HotelId;
+    }
+
+    public function getHotelName(): string
     {
         return $this->hotelName;
     }
 
-    public function getNumRooms()
-    {
-        return $this->numRooms;
-    }
-
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDestinationid()
-    {
-        return $this->destinationid;
-    }
-
-    /**
-     * @param mixed $hotelName
-     */
-    public function setHotelName($hotelName): void
+    public function setHotelName(string $hotelName): void
     {
         $this->hotelName = $hotelName;
     }
 
-    /**
-     * @param mixed $numRooms
-     */
-    public function setNumRooms($numRooms): void
+    public function getNumRooms(): int
+    {
+        return $this->numRooms;
+    }
+
+    public function setNumRooms(int $numRooms): void
     {
         $this->numRooms = $numRooms;
     }
 
-    /**
-     * @param mixed $price
-     */
-    public function setPrice($price): void
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): void
     {
         $this->price = $price;
     }
+
+    public function getDestinationid(): int
+    {
+        return $this->destinationid;
+    }
+
+    public function setDestinationid(int $destinationid): void
+    {
+        $this->destinationid = $destinationid;
+    }
+
 
     public function displayTestHotels()
     {
         echo $this->getHotelName();
         echo $this->getNumRooms();
         echo $this->getPrice();
+
     }
 }
 

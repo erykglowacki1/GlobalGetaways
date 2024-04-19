@@ -2,12 +2,12 @@
 
 class Activity
 {
-    private $ActivityId;
-    private $equipment;
+    private int $ActivityId;
+    private string $equipment;
 
-    private $destinationid;
+    private int $destinationid;
 
-    private $price;
+    private int $price;
 
     /**
      * @param $activityId
@@ -15,7 +15,7 @@ class Activity
      * @param $destinationid
      * @param $price
      */
-    public function __construct($equipment, $price,$destinationid)
+    public function __construct($equipment, $price, $destinationid)
     {
 
         $this->equipment = $equipment;
@@ -23,54 +23,45 @@ class Activity
         $this->destinationid = $destinationid;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getActivityId()
+    public function getActivityId(): int
     {
         return $this->ActivityId;
     }
 
-    /**
-     * @param mixed $ActivityId
-     */
-    public function setActivityId($ActivityId): void
+    public function setActivityId(int $ActivityId): void
     {
         $this->ActivityId = $ActivityId;
     }
 
-    /**
-     * @return mixed
-     */
-
-
-    /**
-     * @return mixed
-     */
-    public function getDestinationid()
-    {
-        return $this->destinationid;
-    }
-
-    /**
-     * @param mixed $destinationid
-     */
-   
-
-    /**
-     * @return mixed
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    public function getEquipment()
+    public function getEquipment(): string
     {
         return $this->equipment;
     }
 
+    public function setEquipment(string $equipment): void
+    {
+        $this->equipment = $equipment;
+    }
 
+    public function getDestinationid(): int
+    {
+        return $this->destinationid;
+    }
+
+    public function setDestinationid(int $destinationid): void
+    {
+        $this->destinationid = $destinationid;
+    }
+
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): void
+    {
+        $this->price = $price;
+    }
 
 }
 ?>
