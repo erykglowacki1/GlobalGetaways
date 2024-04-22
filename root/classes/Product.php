@@ -3,15 +3,14 @@
 class Product
 {
     private int $productId; //primary key
-    private int $flightId;
     private int $activityId;
     private int $hotelId;
     private int $destinationId;
 
-    public function __construct($productId, $flightId, $activityId, $hotelId, $destinationId)
+    public function __construct($productId, $activityId, $hotelId, $destinationId)
     {
         $this->productId = $productId;
-        $this->flightId = $flightId;
+
         $this->activityId = $activityId;
         $this->hotelId = $hotelId;
         $this->destinationId = $destinationId;
@@ -27,15 +26,6 @@ class Product
         $this->productId = $productId;
     }
 
-    public function getFlightId(): int
-    {
-        return $this->flightId;
-    }
-
-    public function setFlightId(int $flightId): void
-    {
-        $this->flightId = $flightId;
-    }
 
     public function getActivityId(): int
     {
@@ -71,7 +61,7 @@ class Product
     public function displayProduct()
     {
         echo "Product ID: " . $this->getProductId() . "\n";
-        echo "Flight ID: " . $this->getFlightId() . "\n";
+
         echo "Activity ID: " . $this->getActivityId() . "\n";
         echo "Hotel ID: " . $this->getHotelId() . "\n";
         echo "Destination ID: " . $this->getDestinationId() . "\n";
