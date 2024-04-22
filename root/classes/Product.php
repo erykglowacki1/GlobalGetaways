@@ -61,7 +61,6 @@ class Product
     public function displayProduct()
     {
         echo "Product ID: " . $this->getProductId() . "\n";
-
         echo "Activity ID: " . $this->getActivityId() . "\n";
         echo "Hotel ID: " . $this->getHotelId() . "\n";
         echo "Destination ID: " . $this->getDestinationId() . "\n";

@@ -1,10 +1,10 @@
 <?php
 
-require_once 'connection/connectionToDB.php';
+
 
 class User {
     private $db;
-    private int $id;
+    private  $id;
     private string $fullName;
     private string $email;
     private int $age;
