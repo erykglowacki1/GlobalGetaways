@@ -4,11 +4,6 @@ class Hotel
 {
     private int $HotelId;
 
-    /**
-     * @return mixed
-     */
-
-
     //primary key
     private string $hotelName;
     private int $numRooms;

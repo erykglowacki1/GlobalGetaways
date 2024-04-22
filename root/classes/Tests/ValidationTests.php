@@ -3,9 +3,11 @@
 require "../../classes/DestinationSearch.php";
 require "../../classes/Destination.php";
 require "../../common.php";
-   require "../../connection/config.php";
+require "../../connection/config.php";
 require "../../connection/connectionToDB.php";
-class ValidationTests {
+
+class ValidationTests
+{
     public $connection;
 
     public function __construct($connection)
@@ -36,9 +38,9 @@ class ValidationTests {
 //    }
 
 
-
 //TESTS OUR SEARCH FEATURE
-    public function displaySearchResults($search_place) {
+    public function displaySearchResults($search_place)
+    {
         $destinationSearch = new DestinationSearch($this->connection);
         $results = $destinationSearch->searchDestination($search_place);
 

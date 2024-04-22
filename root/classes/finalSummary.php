@@ -8,6 +8,7 @@ class finalSummary
 
         if(isset($_SESSION['product_id'])) {
             try {
+                //REFERENCE TO THIS https://www.w3schools.com/sql/func_sqlserver_coalesce.asp
                 $sql = "SELECT 
                             User.FullName,
                             Destination.City AS Destination,

@@ -21,8 +21,10 @@ require "templates/header.php";
     </div>
     <div class="final-footer">
         <p>Thank you for choosing Global Getaways!</p>
+       <class = "button1"><button><a href="destinations.php">Return to Destinations Page</a></button></class>
     </div>
 </div>
+
 </body>
 <?php
 require "templates/footer.php";

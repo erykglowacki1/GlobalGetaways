@@ -8,6 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Hotel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/finalSummary.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/finalSummary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/css/final.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/final.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/final.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/final.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +37,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.3" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.10/bin/php" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -61,6 +69,7 @@
     "PHP Script.config.php.executor": "Run",
     "PHP Script.connectionToDB.php.executor": "Run",
     "PHP Script.deleteActivity.php.executor": "Run",
+    "PHP Script.final.php.executor": "Run",
     "PHP Script.index.php.executor": "Debug",
     "PHPUnit.root.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -73,7 +82,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.php.quality.tools",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -105,6 +114,14 @@
       <TestRunner directory="$PROJECT_DIR$/root" />
       <method v="2" />
     </configuration>
+    <configuration name="UnitTestingDestination.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/root/classes/Tests/UnitTestingDestination.php">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="/opt/homebrew/Cellar/php/8.2.10/bin/php" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
     <configuration name="ValidationTests.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -115,6 +132,7 @@
     </configuration>
     <list>
       <item itemvalue="Codeception.Codeception" />
+      <item itemvalue="PHP Script.UnitTestingDestination.php" />
       <item itemvalue="PHP Script.ValidationTests.php" />
       <item itemvalue="PHPUnit.root" />
     </list>
