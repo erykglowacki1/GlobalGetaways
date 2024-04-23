@@ -33,6 +33,16 @@ class Payment
 
     public function getCardNum(): int
     {
+        // Check if the card number is empty or contains non-numeric characters
+        if ($this->cardNum === 0 || !is_numeric($this->cardNum)) {
+            throw new InvalidArgumentException('Card number must be a non-empty numeric value');
+        }
+
+        // Check if the length of the card number is exactly 16 characters
+        if (strlen((string) $this->cardNum) !== 16) {
+            throw new InvalidArgumentException('Card number must be exactly 16 characters');
+        }
+
         return $this->cardNum;
     }
 
@@ -43,6 +53,16 @@ class Payment
 
     public function getOwnerName(): string
     {
+        // Check if the owner name is empty
+        if (empty($this->ownerName)) {
+            throw new InvalidArgumentException('Owner name cannot be empty');
+        }
+
+        // Check if the owner name contains numbers
+        if (is_numeric($this->ownerName)) {
+            throw new InvalidArgumentException('Owner name cannot contain numbers');
+        }
+
         return $this->ownerName;
     }
 
@@ -77,7 +97,7 @@ class Payment
     {
         if (isset($_POST['submit'])) {
 
-            require "common.php";
+           require "common.php";
             try {
                 require_once 'connection/connectionToDB.php';
 
@@ -87,6 +107,9 @@ class Payment
 
                 // Create an instance of Payment with form data
                 $payment = new Payment($_POST['CardNum'], $_POST['ownerName'], $product_id, $user_id);
+
+
+
 
                 $sql = "INSERT INTO Payment (CardNum, ownerName, Product_id, User_id) VALUES (:cardNum, :ownerName, :product_id, :user_id)";
                 $statement = $connection->prepare($sql);

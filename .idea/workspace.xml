@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9c3359b3-6df6-478c-a1cb-5b8a1e69b485.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/root/classes/Tests/EquivalencePartition.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Hotel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/finalSummary.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/finalSummary.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/css/final.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/final.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/final.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/final.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/purchasePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/purchasePage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/testCaseClasses/validationTestClass/validationTest1.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +54,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Codeception.Codeception.executor": "Run",
     "JavaScript Debug.ValidationTests.php.executor": "Coverage",
+    "PHP Script.EquivalencePartition.php.executor": "Run",
     "PHP Script.TestingHotel.php.executor": "Run",
     "PHP Script.TestingPayment.php.executor": "Run",
     "PHP Script.UnitTestingDestination.php.executor": "Run",
@@ -82,7 +80,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "settings.editor.selected.configurable": "settings.sync",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -110,7 +108,16 @@
       <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/codeception.yml" method="" scope="ConfigurationFile" selected_type="All" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
+    <configuration name="PHPUNIT" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
     <configuration name="root" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="/opt/homebrew/Cellar/php/8.2.10/bin/php" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
       <TestRunner directory="$PROJECT_DIR$/root" />
       <method v="2" />
     </configuration>
@@ -134,6 +141,7 @@
       <item itemvalue="Codeception.Codeception" />
       <item itemvalue="PHP Script.UnitTestingDestination.php" />
       <item itemvalue="PHP Script.ValidationTests.php" />
+      <item itemvalue="PHPUnit.PHPUNIT" />
       <item itemvalue="PHPUnit.root" />
     </list>
     <recent_temporary>
