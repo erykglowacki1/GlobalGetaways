@@ -5,7 +5,7 @@ require "../../classes/Destination.php";
 require "../../common.php";
 require "../../connection/config.php";
 require "../../connection/connectionToDB.php";
-
+require "../../classes/User.php";
 class ValidationTests
 {
     public $connection;
@@ -16,11 +16,18 @@ class ValidationTests
     }
 
 
+    public function testLogin() {
+        session_start();
+       $loginFeature = new User();
+      $resultsLogin =  $loginFeature->login("baban","e");
 
-//    public function testFeature1() {
-//        // Code to test feature 1
-//        echo "Testing Feature 1...\n";
-//    }
+      if ($resultsLogin == null){
+          echo "Login Failed";
+      }else{
+          echo "Login Successful";
+      }
+
+    }
 //
 //    public function testFeature2() {
 //        // Code to test feature 2
@@ -59,7 +66,7 @@ class ValidationTests
 $validationTest = new ValidationTests($connection);
 
 //// Test each feature
-//$validationTest->testFeature1();
+$validationTest->testLogin();
 //$validationTest->testFeature2();
 //$validationTest->testFeature3();
 //$validationTest->testFeature4();

@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/classes/Tests/EquivalencePartition.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/classes/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/purchasePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/purchasePage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/testCaseClasses/validationTestClass/validationTest1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Tests/ValidationTests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

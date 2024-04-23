@@ -72,6 +72,7 @@
 session_start();
 
 require_once 'classes/User.php';
+require "connection/connectionToDB.php";
 $user = new User();
 
 if (isset($_POST['register'])) {

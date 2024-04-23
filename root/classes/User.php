@@ -1,6 +1,6 @@
 <?php
 
-require_once 'connection/connectionToDB.php';
+//require_once 'connection/connectionToDB.php';
 
 class User {
     private $db;
@@ -27,6 +27,7 @@ class User {
     }
 
     public function register() {
+
         if ($this->emailExists($this->email)) {
             return false;
         }
@@ -41,6 +42,7 @@ class User {
     }
 
     public function login($email, $password) {
+
         $stmt = $this->db->prepare("SELECT * FROM User WHERE Email = ? LIMIT 1");
         $stmt->execute([$email]);
 
