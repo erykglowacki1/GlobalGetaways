@@ -102,7 +102,7 @@ class Product
             echo "Items were added to package";
 
             // Get the last inserted product ID
-            //Code taken off stack overflow
+          //  https://stackoverflow.com/questions/10680943/pdo-get-the-last-id-inserted
             $product_id = $connection->lastInsertId();
 
             // Store product ID in session

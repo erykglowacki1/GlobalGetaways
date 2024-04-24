@@ -29,7 +29,7 @@ if (isset($_POST['search_submit'])) {
 <head>
     <title>Search</title>
 </head>
-<h1>Logged in as  <?php echo
+<h1>Logged in as <?php echo
     $_SESSION['user_name']; ?> : </h1>
 <body>
 <div class="search-form-container">
@@ -83,12 +83,15 @@ if (isset($_POST['search_submit'])) {
                         <td>
                             <form action="Auth.php" method="post">
                                 <input type="hidden" name="City" value="<?php echo escape($destination->getCity()); ?>">
-                                <input type="hidden" name="Description" value="<?php echo escape($destination->getDescription()); ?>">
-                                <input type="hidden" name="Price" value="<?php echo escape($destination->getPrice()); ?>">
-                                <input type="hidden" name="destination_id" value="<?php echo $_SESSION['destination_id']; ?>">
+                                <input type="hidden" name="Description"
+                                       value="<?php echo escape($destination->getDescription()); ?>">
+                                <input type="hidden" name="Price"
+                                       value="<?php echo escape($destination->getPrice()); ?>">
+                                <input type="hidden" name="destination_id"
+                                       value="<?php echo $_SESSION['destination_id']; ?>">
 
-                               <div class="submit-button2"><input type="submit" name="book_submit" value="Book Here">
-                               </div>
+                                <div class="submit-button2"><input type="submit" name="book_submit" value="Book Here">
+                                </div>
                             </form>
                         </td>
                     </tr>
@@ -99,16 +102,15 @@ if (isset($_POST['search_submit'])) {
     </div>
 
 
-
 <?php elseif ($error_message): ?>
     <div class="error-section">
         <p><?php echo $error_message; ?></p>
     </div>
 <?php endif; ?>
 
-    <?
-    require "templates/footer.php";
-    ?>
+<?php
+require "templates/footer.php";
+?>
 
 
 

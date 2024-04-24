@@ -3,7 +3,7 @@
 class Payment
 {
 
-    private int $cardNum;
+    private string $cardNum;
     private string $ownerName;
 
     private int $user_id;
@@ -107,8 +107,6 @@ class Payment
 
                 // Create an instance of Payment with form data
                 $payment = new Payment($_POST['CardNum'], $_POST['ownerName'], $product_id, $user_id);
-
-
 
 
                 $sql = "INSERT INTO Payment (CardNum, ownerName, Product_id, User_id) VALUES (:cardNum, :ownerName, :product_id, :user_id)";
