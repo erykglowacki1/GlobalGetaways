@@ -121,7 +121,7 @@ class ValidationTests
             if ($statement->execute()) {
                 echo "Items were added to package";
                 $product_id = $connection->lastInsertId();
-                
+
             } else {
                 echo "Failed to add items to package";
                 return false;

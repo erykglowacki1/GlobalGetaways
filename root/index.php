@@ -59,6 +59,12 @@ if (isset($_POST['search_submit'])) {
         </div>
     </form>
 </div>
+<div class="image-grid">
+    <h1>Some Destinations we offer</h1>
+    <div class="grid-item"><img src="destinations/London.jpeg" alt="Image 1"></div>
+    <div class="grid-item"><img src="destinations/Albufeira.jpeg" alt="Image 2"></div>
+    <div class="grid-item"><img src="destinations/Tokyo.jpeg" alt="Image 3"></div>
+</div>
 
 
 <?php if (!empty($result)): ?>
@@ -102,6 +108,7 @@ if (isset($_POST['search_submit'])) {
     </div>
 
 
+
 <?php elseif ($error_message): ?>
     <div class="error-section">
         <p><?php echo $error_message; ?></p>
@@ -109,6 +116,7 @@ if (isset($_POST['search_submit'])) {
 <?php endif; ?>
 
 <?php
+
 require "templates/footer.php";
 ?>
 
