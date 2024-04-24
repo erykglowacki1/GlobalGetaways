@@ -15,7 +15,7 @@ class ValidationTests
         $this->connection = $connection;
     }
 
-
+//////TESTS LOGIN FEATURE//////
     public function testLogin() {
         session_start();
        $loginFeature = new User();
@@ -28,11 +28,11 @@ class ValidationTests
       }
 
     }
-//
-//    public function testFeature2() {
-//        // Code to test feature 2
-//        echo "Testing Feature 2...\n";
-//    }
+
+    public function testFeature2() {
+
+
+    }
 //
 //    public function testFeature3() {
 //        // Code to test feature 3
