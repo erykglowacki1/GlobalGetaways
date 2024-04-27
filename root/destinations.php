@@ -61,6 +61,7 @@ try {
 
 <head>
     <link rel="stylesheet" href="css/destinationPage.css">
+    <link rel="stylesheet" href="css/grid.css">
 </head>
 <h2 class="desth2">List of all of the destinations we offer</h2>
 <?php if (!empty($success)) echo $success; ?>
@@ -83,17 +84,75 @@ try {
     </table>
 </div>
 
-<h2 class="gal">Gallery</h2>
+<h1 class="gal">Some Destinations We Offer</h1>
 <div class="image-grid">
-    <div class="grid-item"><img src="destinations/London.jpeg" alt="Image 1"></div>
-    <div class="grid-item"><img src="destinations/Albufeira.jpeg" alt="Image 2"></div>
-    <div class="grid-item"><img src="destinations/Tokyo.jpeg" alt="Image 3"></div>
-    <div class="grid-item"><img src="destinations/Split.jpeg" alt="Image 4"></div>
-    <div class="grid-item"><img src="destinations/Whistler.jpeg" alt="Image 5"></div>
-    <div class="grid-item"><img src="destinations/LA.jpeg" alt="Image 6"></div>
+    <div class="grid-item">
+        <img src="destinations/London.jpeg" alt="London">
+        <div class="grid-item-details">
+            <h2>London</h2>
+            <p>Price: €2000</p>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="destinations/Albufeira.jpeg" alt="Albufeira">
+        <div class="grid-item-details">
+            <h2>Albufeira</h2>
+            <p>Price: €500</p>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="destinations/Tokyo.jpeg" alt="Tokyo">
+        <div class="grid-item-details">
+            <h2>Tokyo</h2>
+            <p>Price: €4000</p>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="destinations/Barcelona.jpeg" alt="Barcelona">
+        <div class="grid-item-details">
+            <h2>Barcelona</h2>
+            <p>Price: €XXXX</p> <!-- Replace XXXX with the actual price -->
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="destinations/LA.jpeg" alt="Los Angeles">
+        <div class="grid-item-details">
+            <h2>Los Angeles</h2>
+            <p>Price: €2000</p>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="destinations/NewYork.jpeg" alt="New York">
+        <div class="grid-item-details">
+            <h2>New York</h2>
+            <p>Price: €3000</p>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="destinations/Split.jpeg" alt="Split">
+        <div class="grid-item-details">
+            <h2>Split</h2>
+            <p>Price: €XXXX</p>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="destinations/Whistler.jpeg" alt="Whistler">
+        <div class="grid-item-details">
+            <h2>Whistler</h2>
+            <p>Price: €3000</p>
+        </div>
+    </div>
+    <div class="grid-item">
+        <img src="destinations/rio.jpeg" alt="Rio De Janeiro">
+        <div class="grid-item-details">
+            <h2>Rio De Janeiro</h2>
+            <p>Price: €3500</p>
+        </div>
+    </div>
 </div>
 
 
+<br><br><br>
 
 <?php
 require "templates/footer.php";

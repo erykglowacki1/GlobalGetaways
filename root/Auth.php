@@ -91,7 +91,9 @@ try {
         <input type="hidden" name="destination_id" value="<?php echo $destination_id; ?>">
         <input type="submit" name="submit" value="Add Selected to Package">
     </form>
+    <a class="indexB" href="index.php">Back to Home</a>
 </div>
+
 
 <?php
 require "templates/footer.php";

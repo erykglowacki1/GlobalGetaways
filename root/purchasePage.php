@@ -11,6 +11,7 @@ Payment::settingPaymentInformation();
 ?>
 <head>
     <link rel="stylesheet" href="css/payment.css">
+
 </head>
 <body>
 

@@ -4,6 +4,7 @@ require "templates/header.php";
 ?>
 
 <head>
+    <title>Final Page</title>
     <link rel="stylesheet" href="css/final.css">
 </head>
 
@@ -21,8 +22,8 @@ require "templates/header.php";
     </div>
     <div class="final-footer">
         <p>Thank you for choosing Global Getaways!</p>
-       <class = "button1"><button><a href="destinations.php">Return to Destinations Page</a></button></class>
     </div>
+    <a class="destinationF" href="destinations.php">Return to Destinations Page</a>
 </div>
 
 </body>
