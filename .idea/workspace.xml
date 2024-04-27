@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/root/css/table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/css/destinationPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/destinationPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/css/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/root/css/grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/destinations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/destinations/Split.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/images/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/images/img_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/images/img_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/root/templates/slideshow.php" beforeDir="false" />
-    </list>
+    <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +123,7 @@
       <recent name="$PROJECT_DIR$/GlobalGetaways/root" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Codeception.Codeception">
     <configuration name="Codeception" type="CodeceptionConfigurationType" factoryName="Codeception">
       <CommandLine>
         <PhpTestInterpreterSettings>

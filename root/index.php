@@ -5,7 +5,7 @@ require_once 'connection/connectionToDB.php';
 require "classes/Destination.php";
 require "classes/DestinationSearch.php";
 
-session_start();
+
 $result = [];
 $error_message = "";
 

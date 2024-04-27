@@ -13,7 +13,7 @@ $hotels_result = [];
 try {
     if (isset($_POST['destination_id'])) {
         $destination_id = $_POST['destination_id'];
-        echo "Destination ID received: " . $destination_id;
+//        echo "Destination ID received: " . $destination_id;
         // Retrieve activities and hotels linked to the specified destination
 //        $activities_result = Activity::getActivitiesByDestinationId($connection, $destination_id);
 

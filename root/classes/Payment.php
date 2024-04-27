@@ -134,7 +134,7 @@ class Payment
         // Check if the product_id is set in the session
         if (isset($_SESSION['product_id'])) {
             $product_id = $_SESSION['product_id'];
-            echo "Product ID: $product_id";
+//            echo "Product ID: $product_id";
         } else {
             echo "Product ID not found in session.";
         }
@@ -142,7 +142,7 @@ class Payment
 // Check if the user_id is set in the session
         if (isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
-            echo "User ID: $user_id";
+//            echo "User ID: $user_id";
             // Now you can use $user_id on this page
         } else {
             echo "User ID not found in session.";
