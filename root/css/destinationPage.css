@@ -7,7 +7,7 @@
     margin-top: 20px;
 }
 
-.destinations-table, .activities-table, .hotels-table {
+ .activities-table, .hotels-table {
     border-collapse: collapse;
     width: 80%;
     background-color: #fff;
@@ -15,25 +15,25 @@
     margin-bottom: 20px;
 }
 
-.table-header-row th, .activities-table th, .hotels-table th {
+ .activities-table th, .hotels-table th {
     background-color: #004785; /* Dark Royal Blue */
     color: #ffd700; /* Gold */
     padding: 10px 8px;
     text-align: left;
 }
 
-.data-row td, .activities-table td, .hotels-table td {
+ .activities-table td, .hotels-table td {
     border: 1px solid #ddd;
     padding: 10px 8px;
     text-align: left;
     font-size: 14px;
 }
 
-.data-row:nth-child(even), .activities-table tr:nth-child(even), .hotels-table tr:nth-child(even) {
+ .activities-table tr:nth-child(even), .hotels-table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.data-row:hover, .activities-table tr:hover, .hotels-table tr:hover {
+ .activities-table tr:hover, .hotels-table tr:hover {
     background-color: #ddd;
 }
 

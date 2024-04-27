@@ -9,6 +9,17 @@ session_start();
 $result = [];
 $error_message = "";
 
+// Connect to database and fetch all destinations
+try {
+    $sql = "SELECT * FROM Destination";
+    $statement = $connection->prepare($sql);
+    $statement->execute();
+    $allDestinations = $statement->fetchAll(PDO::FETCH_ASSOC); // Fetch all destinations
+} catch (PDOException $error) {
+    echo $sql . "<br>" . $error->getMessage();
+}
+
+// Handling the search
 if (isset($_POST['search_submit'])) {
     try {
         $search_place = $_POST['search_place'];
@@ -25,11 +36,13 @@ if (isset($_POST['search_submit'])) {
 }
 ?>
 
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Search</title>
     <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/table.css">
 </head>
 <body>
 <h1>Logged in as <?php echo $_SESSION['user_name']; ?> :</h1>
@@ -105,94 +118,25 @@ if (isset($_POST['search_submit'])) {
     <p><?php echo $error_message; ?></p>
 </div>
 <?php endif; ?>
-    <h1 class="gal">Some Destinations We Offer</h1>
-    <div class="slideshow-container">
-        <!-- Slideshow functionality adapted from examples provided by W3Schools -->
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 9</div>
-            <img src="destinations/London.jpeg" style="width:100%">
-            <div class="text">London, UK</div>
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 9</div>
-            <img src="destinations/Albufeira.jpeg" style="width:100%">
-            <div class="text">Albufeira, Portugal</div>
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 9</div>
-            <img src="destinations/Tokyo.jpeg" style="width:100%">
-            <div class="text">Tokyo, Japan</div>
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">4 / 9</div>
-            <img src="destinations/Barcelona.jpeg" style="width:100%">
-            <div class="text">Barcelona, Spain</div>
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">5 / 9</div>
-            <img src="destinations/LA.jpeg" style="width:100%">
-            <div class="text">Los Angeles, USA</div>
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">6 / 9</div>
-            <img src="destinations/NewYork.jpeg" style="width:100%">
-            <div class="text">New York, USA</div>
-        </div>
-        <div class="mySlides fade">
-            <div the "numbertext">7 / 9</div>
-        <img src="destinations/Split.jpeg" style="width:100%">
-        <div class="text">Split, Croatia</div>
-    </div>
-    <div class="mySlides fade">
-        <div class="numbertext">8 / 9</div>
-        <img src="destinations/Whistler.jpeg" style="width:100%">
-        <div class="text">Whistler, Canada</div>
-    </div>
-    <div class="mySlides fade">
-        <div the "numbertext">9 / 9</div>
-<img src="destinations/rio.jpeg" style="width:100%">
-    <div class="text">Rio de Janeiro, Brazil</div>
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-    </div>
-
-<br>
-
-<div style="text-align:center">
-    <?php for ($i = 1; $i <= 9; $i++) { ?>
-        <span class="dot" onclick="currentSlide(<?php echo $i; ?>)"></span>
-    <?php } ?>
+<h2 class="desth2">List of all of the destinations we offer</h2>
+<div class="container">
+    <table class="destinations-table">
+        <thead>
+        <tr class="table-header-row">
+            <th class="header-city">City</th>
+            <th class="header-price">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($allDestinations as $row) : ?>
+            <tr class="data-row">
+                <td class="data-city"><?php echo htmlspecialchars($row["City"]); ?></td>
+                <td class="data-price"><?php echo htmlspecialchars($row["Price"]); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
-<!-- Slideshow functionality adapted from examples provided by W3Schools -->
-<script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
-</script>
 </body>
 <?php
 require "templates/footer.php";

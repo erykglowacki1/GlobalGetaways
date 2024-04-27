@@ -46,43 +46,13 @@
 
 
 </header>
-<?php
-try {
-    require_once 'connection/connectionToDB.php';
-    require "common.php";
-    $sql = "SELECT * FROM Destination";
-    $statement = $connection->prepare($sql);
-    $statement->execute();
-    $result = $statement->fetchAll();
-} catch (PDOException $error) {
-    echo $sql . "<br>" . $error->getMessage();
-}
-?>
+
 
 <head>
-    <link rel="stylesheet" href="css/destinationPage.css">
+
     <link rel="stylesheet" href="css/grid.css">
 </head>
-<h2 class="desth2">List of all of the destinations we offer</h2>
-<?php if (!empty($success)) echo $success; ?>
-<div class="container">
-    <table class="destinations-table">
-        <thead>
-        <tr class="table-header-row">
-            <th class="header-city">City</th>
-            <th class="header-price">Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($result as $row) : ?>
-            <tr class="data-row">
-                <td class="data-city"><?php echo escape($row["City"]); ?></td>
-                <td class="data-price"><?php echo escape($row["Price"]); ?></td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
+
 
 <h1 class="gal">Some Destinations We Offer</h1>
 <div class="image-grid">
@@ -101,9 +71,9 @@ try {
         </div>
     </div>
     <div class="grid-item">
-        <img src="destinations/Tokyo.jpeg" alt="Tokyo">
+        <img src="destinations/Tokyo.jpeg" alt="Japan">
         <div class="grid-item-details">
-            <h2>Tokyo</h2>
+            <h2>Japan</h2>
             <p>Price: €4000</p>
         </div>
     </div>
@@ -111,7 +81,7 @@ try {
         <img src="destinations/Barcelona.jpeg" alt="Barcelona">
         <div class="grid-item-details">
             <h2>Barcelona</h2>
-            <p>Price: €XXXX</p> <!-- Replace XXXX with the actual price -->
+            <p>Price: €300</p>
         </div>
     </div>
     <div class="grid-item">
@@ -129,10 +99,10 @@ try {
         </div>
     </div>
     <div class="grid-item">
-        <img src="destinations/Split.jpeg" alt="Split">
+        <img src="destinations/Amsterdam.jpeg" alt="Amsterdam">
         <div class="grid-item-details">
-            <h2>Split</h2>
-            <p>Price: €XXXX</p>
+            <h2>Amsterdam</h2>
+            <p>Price: €500</p>
         </div>
     </div>
     <div class="grid-item">
