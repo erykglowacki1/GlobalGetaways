@@ -45,7 +45,7 @@ if (isset($_POST['search_submit'])) {
     <link rel="stylesheet" href="css/table.css">
 </head>
 <body>
-<h1>Logged in as <?php echo $_SESSION['user_name']; ?> :</h1>
+<br>
 <div class="search-form-container">
     <h2 style="text-align: center;">Search for Destinations</h2>
     <form class="search-bar" method="post">
@@ -118,6 +118,7 @@ if (isset($_POST['search_submit'])) {
     <p><?php echo $error_message; ?></p>
 </div>
 <?php endif; ?>
+<br>
 <h2 class="desth2">List of all of the destinations we offer</h2>
 <div class="container">
     <table class="destinations-table">
@@ -138,6 +139,13 @@ if (isset($_POST['search_submit'])) {
     </table>
 </div>
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php
 require "templates/footer.php";
 ?>

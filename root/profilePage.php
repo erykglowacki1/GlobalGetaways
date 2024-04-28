@@ -82,8 +82,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_product'])) {
         <?php endif; ?>
     </div>
 </div>
-
 </body>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 </html>
 <?php
 require "templates/footer.php";

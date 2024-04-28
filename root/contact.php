@@ -5,7 +5,9 @@ require "templates/header.php";
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <main>
+    <br>
     <h1 id="conTitle">Contact us</h1>
+    <br>
     <div class="container">
     <section class="contact">
 <p>We answer emails between 9am-6pm from Monday to Friday</p>
@@ -25,7 +27,9 @@ require "templates/header.php";
 
     </section>
     </div>
+    <br>
 </main>
+
 <?php
 require "templates/footer.php";
 ?>

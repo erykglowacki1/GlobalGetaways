@@ -53,8 +53,9 @@
     <link rel="stylesheet" href="css/grid.css">
 </head>
 
-
+<br>
 <h1 class="gal">Some Destinations We Offer</h1>
+<br>
 <div class="image-grid">
     <div class="grid-item">
         <img src="destinations/London.jpeg" alt="London">
@@ -122,7 +123,7 @@
 </div>
 
 
-<br><br><br>
+<br><br><br><br>
 
 <?php
 require "templates/footer.php";

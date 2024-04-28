@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="" />
+    <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1Practice/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1Practice/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1Practice/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/destinations.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/destinations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/profilePage.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/profilePage.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -220,6 +230,7 @@
       <workItem from="1712783723028" duration="696000" />
       <workItem from="1712853766725" duration="26992000" />
       <workItem from="1713991990451" duration="877000" />
+      <workItem from="1714315942579" duration="1528000" />
     </task>
     <servers />
   </component>
