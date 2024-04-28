@@ -80,11 +80,11 @@ class Hotel
 
     public function displayTestHotels()
     {
-        echo $this->getHotelName();
-        echo $this->getNumRooms();
-        echo $this->getPrice();
-
+        echo "Hotel Name: " . $this->getHotelName() . "\n";
+        echo "Number of Rooms: " . $this->getNumRooms() . "\n";
+        echo "Price: " . $this->getPrice() . "\n";
     }
+
 }
 
 ?>

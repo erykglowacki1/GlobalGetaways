@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00fd23e5-0ca7-437e-99fb-d8f67133d053" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Database/GlobalGetaways.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/GlobalGetaways (1).sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/classes/Destination.php" beforeDir="false" afterPath="$PROJECT_DIR$/root/classes/Destination.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +32,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.10/bin/php">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
@@ -79,46 +77,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Codeception.Codeception.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.ValidationTests.php.executor&quot;: &quot;Coverage&quot;,
-    &quot;PHP Script.EquivalencePartition.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.TestingHotel.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.TestingPayment.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.UnitTestingDestination.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.UnitTestingHotel.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.UnitTestingPayment.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.UnitTestingProduct.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.ValidationTests.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.admin.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.adminLogin.php.executor&quot;: &quot;Debug&quot;,
-    &quot;PHP Script.config.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.connectionToDB.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.deleteActivity.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.final.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.index.php.executor&quot;: &quot;Debug&quot;,
-    &quot;PHPUnit.root.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Applications/MAMP/htdocs/GlobalGetaways&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Codeception.Codeception.executor": "Run",
+    "JavaScript Debug.UnitTestingHotel.php.executor": "Run",
+    "JavaScript Debug.ValidationTests.php.executor": "Coverage",
+    "PHP Script.EquivalencePartition.php.executor": "Run",
+    "PHP Script.TestingHotel.php.executor": "Run",
+    "PHP Script.TestingPayment.php.executor": "Run",
+    "PHP Script.UnitTestingDestination.php.executor": "Run",
+    "PHP Script.UnitTestingHotel.php.executor": "Run",
+    "PHP Script.UnitTestingPayment.php.executor": "Run",
+    "PHP Script.UnitTestingProduct.php.executor": "Run",
+    "PHP Script.ValidationTests.php.executor": "Run",
+    "PHP Script.admin.php.executor": "Run",
+    "PHP Script.adminLogin.php.executor": "Debug",
+    "PHP Script.config.php.executor": "Run",
+    "PHP Script.connectionToDB.php.executor": "Run",
+    "PHP Script.deleteActivity.php.executor": "Run",
+    "PHP Script.final.php.executor": "Run",
+    "PHP Script.index.php.executor": "Debug",
+    "PHPUnit.root.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Applications/MAMP/htdocs/GlobalGetaways",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.sync",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/GlobalGetaways/root/adminFiles" />
@@ -128,7 +127,7 @@
       <recent name="$PROJECT_DIR$/GlobalGetaways/root" />
     </key>
   </component>
-  <component name="RunManager" selected="Codeception.Codeception">
+  <component name="RunManager">
     <configuration name="Codeception" type="CodeceptionConfigurationType" factoryName="Codeception">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -233,6 +232,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
