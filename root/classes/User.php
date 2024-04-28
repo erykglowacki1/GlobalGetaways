@@ -4,7 +4,7 @@
 
 class User {
     private $db;
-    private int $id;
+    private int $id = 0;
     private string $fullName;
     private string $email;
     private int $age;
@@ -15,7 +15,7 @@ class User {
         $this->db = $connection;
     }
 
-    public function getId() {
+    public function getId(): int{
         return $this->id;
     }
 
